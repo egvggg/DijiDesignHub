@@ -1,0 +1,258 @@
+html{
+
+    box-sizing: border-box;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    background-color: #171717;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff; 
+    border-radius: 10px; 
+}
+
+ 
+
+.container{
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    align-items: center; 
+    padding-top: 50px;
+}
+
+.course-image {
+    width: 37.5px; 
+    height: auto; 
+   
+}
+
+.title {
+    font-size: 24px; 
+    font-weight: 400;
+    font-size: 50px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.subtitle, .subtitle2{
+    font-weight: 500;
+    font-size: 40px;
+    color: #3d3d3d;
+    padding-left: 40px;
+    margin-right: 15px;
+}
+
+.section1, .section2, .section3 {
+    margin-top: 20px;
+    border-radius: 35px;
+    width: 100%; 
+    max-width: 1361px; 
+    background: #fff;
+   padding-bottom: 35px; 
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.subtitle {
+    padding-top: 39px;
+}
+
+.stars{
+    padding-right: 49px;
+}
+
+.stars-1{
+    padding-top: 39px;
+}
+
+.subhead{
+    padding-top: 50px;
+    font-weight: 400;
+    font-size: 32px;
+    color: #fff;
+}
+
+.line-container {
+    display: flex;          /* Включаем Flexbox */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    padding: 39px 40px 30px; /* Отступы (снизу, слева и сверху) */
+    overflow: hidden;      /* Скрываем переполнение, если необходимо */
+}
+
+/* Свойства для SVG */
+svg {
+    width: 100%;           /* Ширина как 100% от контейнера */
+    max-width: 1270px;    /* Максимальная ширина полоски */
+    height: auto;          /* Высота адаптивная */
+}
+
+
+@media (max-width: 685px) {
+    .title{
+        font-size: 46px;
+    }
+
+    .subtitle, .subtitle2{
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 545px) {
+    .title{
+        font-size: 38px;
+    }
+
+    .course-image{
+        width: 32px;
+        margin-top: 5px;
+    }
+
+    .subtitle, .subtitle2{
+        font-size: 28px;
+    }
+
+    .subhead{
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subtitle, .subtitle2{
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 450px) {
+    .title{
+        font-size: 32px;
+    }
+
+    .subtitle, .subtitle2{
+        font-size: 20px;
+    }
+
+    .subhead{
+        font-size: 28px;
+    }
+
+    .stars{
+        width: 220px;
+    }
+}
+
+@media (max-width: 430px) {
+    .title{
+        font-size: 30px;
+    }
+
+    .subtitle, .subtitle2{
+        font-size: 20px;
+    }
+
+    .subhead{
+        font-size: 26px;
+    }
+
+    .stars{
+        width: 190px;
+    }
+}
+
+@media (max-width: 390px) {
+    .title{
+        font-size: 28px;
+    }
+
+    .course-image{
+        width: 22px;
+        margin-top: 7px;
+    }
+
+    .subtitle, .subtitle2{
+        font-size: 18px;
+    }
+
+    .subhead{
+        font-size: 22px;
+    }
+
+    .stars{
+        width: 150px;
+    }
+}
+
+@media (max-width: 360px) {
+    .title{
+        font-size: 26px;
+    }
+
+    .course-image{
+        width: 22px;
+        margin-top: 5px;
+    }
+
+    .subtitle, .subtitle2{
+        font-size: 18px;
+    }
+
+    .subhead{
+        font-size: 22px;
+    }
+
+    .stars{
+        width: 150px;
+    }
+}
+
+@media (max-width: 330px) {
+    .title{
+        font-size: 24px;
+    }
+
+    .course-image{
+        width: 22px;
+        margin-top: 5px;
+    }
+
+    .subtitle, .subtitle2{
+        font-size: 12px;
+    }
+
+    .subhead{
+        font-size: 18px;
+    }
+
+    .stars{
+        width: 150px;
+    }
+}

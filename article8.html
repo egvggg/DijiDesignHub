@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/article6.css">
+    <script src="article.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Хороший Плохой UXt</title>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progressbar" id="progressBar"></div>
+    </div>
+    <div class="container"> 
+        <h4 class="course__name course__name1">UX/UI дизайн</h4>
+            <h1 class="title">Хороший Плохой UX</h1>
+            <p class="text">
+                Продуманный Ux помогает пользователю комфортно, без лишних проблем двигаться из точки A в точку B.
+            </p>
+            <p class="text">В этом уроке мы посмотрим примеры плохих и хороших Ux решений, и разберёмся почему они такими являются.</p>
+
+            <section class="section">
+                <div class="section__inner">
+                    <a href="course2.html"><img src="images/articlearrow.svg" alt=""></a>
+                    <a href="test7.html" class="article__link">Далее</a>
+                </div>
+            </section>
+
+            <script>
+                // Создаем новый наблюдатель с помощью Intersection Observer
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Добавляем класс видимости, когда элемент появляется в области видимости
+                            entry.target.classList.add('visible');
+                            // Удаляем элемент из списка наблюдения
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+            
+                // Выбираем все заголовки и текстовые блоки в контейнере
+                const articles = document.querySelectorAll('.title, .section__tittle, .subtitle, .text, .img_term2, .text2, .title2, .title1, .uxui__img');
+            
+                // Наблюдаем за каждым элементом
+                articles.forEach(article => {
+                    observer.observe(article);
+                });
+            </script>
+</body>
+</html>

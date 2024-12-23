@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фундамент дизайна - Появление контента</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .title, .section__tittle, .subtitle, .text {
+            opacity: 0; /* Начальное состояние: скрыто */
+            transform: translateY(20px); /* Начальная позиция (чуть ниже) */
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Плавный переход */
+        }
+
+        .visible {
+            opacity: 1; /* Полная видимость */
+            transform: translateY(0); /* Вернуть на место */
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .example__img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h4 class="course__name">Фундамент дизайна</h4>
+    <h1 class="title">Базовые принципы дизайна</h1>
+    <p class="text">
+        У веб-дизайна, также как и у любого другого вида искусства, есть свои правила и принципы. Дизайнеры следуют принципам дизайна для того, чтобы правильно оформить свою композицию (веб-сайт, лендинг, баннер).
+    </p>
+    <p class="text">
+        Всего ключевых принцевов дизайна 8: единство, баланс, акцент, ритм, контраст, пропорции, пространство, иерархия. Разберём каждый из них.
+    </p>
+
+    <section class="section">
+        <h2 class="section__tittle">Единство</h2>
+        <div class="image-container">
+            <img src="images/unity.jpg" alt="" class="section__img">
+        </div>
+        <p class="text">
+            Этот принцип подразумевает, что все элементы дизайна должны быть согласованы и работать вместе для создания целостной картины.
+        </p>
+        <h3 class="subtitle">Зачем нужно единство в дизайне сайта</h3>
+        <p class="text">1.<span class="textbold"> Улучшает восприятие.</span> Когда все элементы сайта (цвета, шрифты, графика, навигация) гармонируют друг с другом, пользователю легче воспринимать и взаимодействовать с сайтом.</p>
+        <p class="text">2.<span class="textbold"> Усиливает бренд.</span> Единый стиль помогает сформировать запоминающийся образ бренда и усилить его узнаваемость.</p>
+        <p class="text">3.<span class="textbold"> Повышает профессионализм.</span> Сайт с продуманным единым дизайном выглядит более профессионально и вызывает доверие у посетителей.</p>
+
+        <h3 class="subtitle">Как достичь единства в дизайне сайта</h3>
+        <p class="text">1.<span class="textbold"> Выбрать последовательную цветовую палитру.</span> Используй ограниченный набор основных и дополнительных цветов.</p>
+
+        <p class="text">2.<span class="textbold"> Применять согласованные шрифты.</span> Ограничьcя 2-3 шрифтами, подходящими для вашего бренда.</p>
+        <p class="text">3.<span class="textbold"> Создать единую графику.</span> Используй единый стиль иллюстраций, иконок и других визуальных элементов.</p>
+        <p class="text">4.<span class="textbold"> Разработать последовательную навигацию.</span> Обеспечь логичную структуру меню и сквозную систему навигации по сайту.</p>
+        <p class="text">5.<span class="textbold"> Соблюдать пропорции и сетки.</span> Выдерживай единые принципы верстки и размещения объектов.</p>
+
+        <h4 class="example">Пример</h4>
+        <div class="image-container">
+            <img src="images/example__img.jpg" alt="" class="example__img">
+        </div>
+        <h5 class="photo__description">Скриншот сайта <a href="https://www.apple.com/store" class="example__link" target="_blank">Apple</a></h5>
+        <p class="text">Сайт Apple, где все элементы - цвета, шрифты, графика - создают цельный и узнаваемый визуальный стиль.</p>
+    </section>
+</div>
+
+<script>
+    // Создаем новый наблюдатель с помощью Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Добавляем класс видимости, когда элемент появляется в области видимости
+                entry.target.classList.add('visible');
+                // Удаляем элемент из списка наблюдения
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    // Выбираем все заголовки и текстовые блоки в контейнере
+    const articles = document.querySelectorAll('.title, .section__tittle, .subtitle, .text, .example, .image-container img, .section__img');
+
+    // Наблюдаем за каждым элементом
+    articles.forEach(article => {
+        observer.observe(article);
+    });
+</script>
+
+</body>
+</html>
+

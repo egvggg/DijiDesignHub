@@ -1,0 +1,180 @@
+html{
+    box-sizing: border-box;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.progress-container {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    height: 5px; 
+    background: transparent; 
+    overflow: hidden;
+}
+
+.progressbar {
+    height: 100%; 
+    background: #171717; 
+    width: 0; 
+    transition: width 0.1s ease-in-out; 
+}
+
+.container{
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #171717; 
+    border-radius: 10px; 
+}
+
+.course__name{
+    padding-top: 70px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #2d2b2b;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 50px;
+    color: #171717;
+    padding-bottom: 5px;
+}    
+
+.text{
+    font-weight: 400;
+    font-size: 26px;
+    color: #000;
+    padding-top: 30px;
+    width: 100%;
+    max-width: 1180px;
+}
+
+.section{
+    padding-top: 100px;
+}
+
+.section__tittle{
+    font-weight: 500;
+    font-size: 45px;
+    color: #171717;
+}
+
+.section__img{
+    padding-top: 50px;
+    width: 100%;
+    max-width: 752px;
+    height: auto;
+}
+
+.example__img{
+    width: 100%;
+    height: auto;
+}
+
+.subtitle{
+    padding-top: 50px;
+    font-weight: 500;
+    font-size: 35px;
+    color: #171717;
+}
+
+.textbold{
+    font-weight: 500;
+}
+
+.example{
+    padding-top: 50px;
+    font-weight: 500;
+    font-size: 35px;
+    color: #171717;
+    padding-bottom: 30px;
+}
+
+.photo__description{
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #a5a5a5;
+   text-align: center;
+}
+
+.example__link{
+    font-weight: 400;
+    font-size: 18px;
+    color: #a5a5a5;
+    text-decoration: underline 2px;
+}
+
+.principlename{
+    padding-top: 50px;
+    font-weight: 500;
+    font-size: 35px;
+    color: #171717;
+}
+
+.principlesubname{
+    padding-top: 35px;
+    font-weight: 500;
+    font-size: 30px;
+    color: #171717;
+}
+
+.section__inner{
+    width: 100%;
+    max-width: 1180px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+
+.article__link{
+    border-radius: 35px;
+    width: 203px;
+    height: 68px;
+    background: #171717;
+    text-align: center;
+    padding-top: 24px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff;
+}
+
+.image-container {
+    text-align: center; /* Центрирование изображений */
+}
+
+.title, .section__tittle, .subtitle, .text, .section__img, .example__img {
+    opacity: 0; /* Начальное состояние: скрыто */
+    transform: translateY(20px); /* Начальная позиция (чуть ниже) */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Плавный переход */
+}
+
+.visible {
+    opacity: 1; /* Полная видимость */
+    transform: translateY(0); /* Вернуть на место */
+}

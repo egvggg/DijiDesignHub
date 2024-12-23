@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/test2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container1">
+        <h1 id="question-title">Брифинг </h1>
+        <img src="images/briefing1.jpg" alt="задание" class="img__test3" id="questionImage">
+        <div class="images__container4 images__container5"  id="imagesContainer">
+        </div>
+
+        <div id="popup" class="popup" style="display:none;">
+            <div class="popup-content">
+                <span id="popup-message"></span>
+                <div class="popup-footer">
+                    <img src="images/icon.svg" alt="icon"  id="footer-icon">  
+                    <button id="next-button">Далее</button>
+                    <button class="button" id="cancel-button">Прервать занятие</button>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirm-popup" class="popup" style="display:none;">
+        <div class="popup-content">
+            <img src="images/popup_img.svg" alt="icon" class="popup_img">
+            <span class="popup_text1">Хочешь прервать занятие?</span>
+            <span class="popup_text2">Прогресс урока не сохранится</span>
+            <div class="popup-footer2">
+                <button id="cancel-logout-button">Отмена</button>
+                <button id="confirm-logout-button">Прервать</button>
+            </div>
+        </div>
+    </div>
+    <script src="test10.js" defer></script> 
+    
+</body>
+</html>

@@ -1,0 +1,299 @@
+html{
+
+    box-sizing: border-box;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.progress-container {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    height: 5px; 
+    background: transparent; 
+    overflow: hidden;
+}
+
+.progressbar {
+    height: 100%; 
+    background: #171717; 
+    width: 0; 
+    transition: width 0.1s ease-in-out; 
+}
+
+.container{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #171717; 
+    border-radius: 10px; 
+}
+
+.course__name{
+    padding-top: 70px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #2d2b2b;
+}
+
+.course__name1{
+    padding-top: 250px;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 50px;
+    color: #171717;
+    padding-bottom: 5px;
+}    
+
+.text{
+    font-weight: 400;
+    font-size: 26px;
+    color: #000;
+    padding-top: 30px;
+    width: 100%;
+    max-width: 1180px;
+}
+
+.text3{
+    font-weight: 400;
+    font-size: 26px;
+    color: #000;
+    padding-top: 20px;
+    width: 100%;
+    max-width: 1180px;
+}
+
+.text2{
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 18px;
+    color: #a5a5a5;
+}
+
+.text4{
+    font-weight: 500;
+    font-size: 30px;
+    color: #000;
+    padding-top: 30px;
+    width: 100%;
+    max-width: 1180px;
+}
+
+.text5{
+    font-weight: 400;
+    font-size: 18px;
+    color: #a5a5a5;
+    width: 100%;
+    max-width: 1180px;
+}
+
+
+.img__link{
+    font-weight: 400;
+    font-size: 18px;
+    color: #a5a5a5;
+    padding-left: 5px;
+    text-decoration: underline;
+}
+
+.title1{
+    font-weight: 500;
+    font-size: 50px;
+    color: #171717;
+    padding-top: 100px;
+}
+
+.title2{
+    font-weight: 500;
+    font-size: 30px;
+    color: #171717;
+    padding-top: 50px;
+}
+
+.title3{
+    font-weight: 500;
+    font-size: 30px;
+    color: #171717;
+    padding-top: 30px;
+}
+
+.title4{
+    font-weight: 500;
+    font-size: 35px;
+    color: #171717;
+    padding-top: 40px;
+}
+
+.subtitle{
+    padding-top: 40px;
+    font-weight: 500;
+    font-size: 35px;
+    color: #171717;
+}
+
+.subtitle1{
+    padding-top: 40px;
+    font-weight: 500;
+    font-size: 40px;
+    color: #171717;
+}
+
+.patterns{
+    padding-top: 30px;
+    padding-bottom: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.textbold{
+    font-weight: 500;
+    font-size: 26px;
+    color: #171717;
+}
+
+.section{
+    padding-top: 100px;
+}
+
+.section__inner{
+    width: 100%;
+    max-width: 1180px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+
+.article__link{
+    border-radius: 35px;
+    width: 203px;
+    height: 68px;
+    background: #171717;
+    text-align: center;
+    padding-top: 24px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff;
+}
+
+.uxui__img{
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+}
+
+.userflowimg{
+    width: 100%;
+    height: auto;
+}
+
+
+
+.ux__terms, .ui__terms, .patterns__img, .userflow{
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.skills__img{
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.skills__link{
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 26px;
+    color: #000;
+}
+
+
+.circle{
+   margin-top: 30px;
+   margin-bottom: 30px;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+  
+  .circle1 {
+    width: 10vw; /* 20% от ширины viewport */
+    height: 10vw; /* Сохраняет квадратную форму */
+    background: #0c7cff;
+    transform: rotate(-45deg);
+  }
+
+.prototype__img1{
+    max-width: 640px;
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.subtitle2{
+    padding-top: 40px;
+    font-weight: 500;
+    font-size: 30px;
+    color: #171717;
+}
+
+.guidline__link{
+    font-weight: 400;
+    font-size: 26px;
+    color: #000;
+    padding-top: 30px;
+    width: 100%;
+    max-width: 1180px;
+    text-decoration: underline;
+    
+}
+
+.image-container{
+    text-align: center;
+}
+
+.title, .title3, .title4, .section__tittle, .subtitle, .subtitle1, .text, .text2, .text3, .text4, .title2, .title1,.img1, .img, .patterns, .uxui__img, .ux__terms, .ui__terms, .skills__img, .patterns__img, .userflow, .userflowimg, .circle, .prototype__img1 {
+    opacity: 0; /* Начальное состояние: скрыто */
+    transform: translateY(20px); /* Начальная позиция (чуть ниже) */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Плавный переход */
+}
+
+.visible {
+    opacity: 1; /* Полная видимость */
+    transform: translateY(0); /* Вернуть на место */
+}
