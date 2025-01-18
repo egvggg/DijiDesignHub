@@ -445,6 +445,7 @@ body{
     display: flex;
     justify-content: space-between;
     gap: 50px;
+   
 }
 
 .courses__link{
@@ -832,8 +833,8 @@ input:focus::placeholder {
 
 @media (max-width: 1260px), (max-width: 1200px) {
     .courses__cards {
-        display: block; 
-        gap: 20px; /* Даём общий стиль для двух медиазапросов */
+        flex-direction: column; /* Меняем направление на вертикальное */
+        align-items: center;
     }
 }
 
@@ -1305,6 +1306,10 @@ input:focus::placeholder {
     .home__link {
         line-height: 100%; /* Высота строки */
     }
+    
+    .card__1 {
+        height: 720px; /* Высота карточки */
+    }
 
     .home__subtitle {
         padding: 30px 0; /* Вертикальные отступы */
@@ -1318,10 +1323,6 @@ input:focus::placeholder {
 @media (max-width: 372px) {
     .menu__list-link {
         font-size: 13px; /* Размер шрифта для меню */
-    }
-
-    .card__1 {
-        height: 720px; /* Высота карточки */
     }
 
     .footer__list-2 {
