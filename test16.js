@@ -1,6 +1,6 @@
 const tests = [
     {
-        question: "Вопрос 1",
+        title: 'Для чего эффект "вкладываюсь - ценю" может использоваться в UX-дизайне?',
         images: [
             {
                 src: "images/effectsone1.jpg",
@@ -33,7 +33,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 2",
+        title: 'Как эффект "вкладываюсь - ценю" может помочь повысить конверсию сайта?',
         images: [
             {
                 src: "images/effectstwo1.jpg",
@@ -66,7 +66,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 3",
+        title: 'Что представляет собой психологический прием "эффект дефицита" в UX-дизайне?',
         images: [
             {
                 src: "images/effectsthree1.jpg",
@@ -99,7 +99,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 4",
+        title: 'Как эффект "запрета" может применяться в UX-дизайне?',
         images: [
             {
                 src: "images/effectsfour1.jpg",
@@ -132,7 +132,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 5",
+        title: 'Какие приемы в UX-дизайне помогают экономить время пользователей?',
         images: [
             {
                 src: "images/effectsfive1.jpg",
@@ -165,7 +165,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 6",
+        title: 'Как принцип "как съесть слона" может быть использован в UX-дизайне?',
         images: [
             {
                 src: "images/effectssix1.jpg",
@@ -198,7 +198,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 7",
+        title: 'Что представляет собой "эффект фрагментации" в UX-дизайне?',
         images: [
             {
                 src: "images/effectsseven1.jpg",
@@ -231,7 +231,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 8",
+        title: "Как эффект Джейкоба может влиять на решения UX-дизайнера при разработке нового интерфейса?",
         images: [
             {
                 src: "images/effectseight1.jpg",
@@ -264,7 +264,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 9",
+        title: "Как UX-дизайнеры могут использовать эмоциональные визуальные образы для повышения эмпатии пользователей?",
         images: [
             {
                 src: "images/effectsnine1.jpg",
@@ -297,7 +297,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 10",
+        title: "Как UX-дизайнеры могут использовать эффект подталкивания для улучшения взаимодействия пользователей?",
         images: [
             {
                 src: "images/effectsten1.jpg",
@@ -330,27 +330,32 @@ const tests = [
         ]
     }]
 
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+        }
+    }
+
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const nextButton = document.getElementById('next-button');
     const cancelButton = document.getElementById('cancel-button');
-    const questionTitle = document.getElementById('question-title');
+    const questionTitle = document.getElementById('question-title21');
     
     // Всплывающее окно для прерывания занятия
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
-    const questionTitles = [
-        'Для чего эффект "вкладываюсь - ценю" может использоваться в UX-дизайне?', 'Как эффект "вкладываюсь - ценю" может помочь повысить конверсию сайта?',
-        'Что представляет собой психологический прием "эффект дефицита" в UX-дизайне?', 'Как эффект "запрета" может применяться в UX-дизайне?',
-        'Какие приемы в UX-дизайне помогают экономить время пользователей?', 'Как принцип "как съесть слона" может быть использован в UX-дизайне?',
-        'Что представляет собой "эффект фрагментации" в UX-дизайне?', 'Как эффект Джейкоба может влиять на решения UX-дизайнера при разработке нового интерфейса?',
-        'Как UX-дизайнеры могут использовать эмоциональные визуальные образы для повышения эмпатии пользователей?', 'Как UX-дизайнеры могут использовать эффект подталкивания для улучшения взаимодействия пользователей?'
-        ];
-    
+    shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
     
         let correctAnswers = 0; // Инициализируем счетчик
     
@@ -358,7 +363,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
         
             // Устанавливаем заголовок в зависимости от текущего вопроса
-            questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+            questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         
             // Очистить контейнер изображений
             imagesContainer.innerHTML = '';

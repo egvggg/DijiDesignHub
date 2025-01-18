@@ -1,5 +1,6 @@
 const tests = [
     {
+        title: "Шрифт",
         question: "Вопрос 1",
         images: [
             {
@@ -33,6 +34,7 @@ const tests = [
         ]
     },
     {
+        title: "Гарнитура",
         question: "Вопрос 2",
         images: [
             {
@@ -66,6 +68,7 @@ const tests = [
         ]
     },
     {
+        title: "Начертание",
         question: "Вопрос 3",
         images: [
             {
@@ -99,6 +102,7 @@ const tests = [
         ]
     },
     {
+        title: "Трекинг",
         question: "Вопрос 4",
         images: [
             {
@@ -132,6 +136,7 @@ const tests = [
         ]
 },  
 {
+    title: "Интерлиньяж",
     question: "Вопрос 5",
     images: [
         {
@@ -165,6 +170,7 @@ const tests = [
     ]
 },
 {
+    title: "Выключка",
     question: "Вопрос 6",
     images: [
         {
@@ -198,6 +204,13 @@ const tests = [
     ]
 }]
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+    }
+}
+
 let currentQuestionIndex = 0;
 const imagesContainer = document.getElementById('imagesContainer');
 const popup = document.getElementById('popup');
@@ -211,12 +224,12 @@ const confirmPopup = document.getElementById('confirm-popup');
 const cancelLogoutButton = document.getElementById('cancel-logout-button');
 const confirmLogoutButton = document.getElementById('confirm-logout-button');
 
-const questionTitles = [
-    "Шрифт", "Гарнитура",
-    "Начертание", "Трекинг",
-    "Интерлиньяж", "Выключка"
+shuffle(tests);
 
-];
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
 
 
     let correctAnswers = 0; // Инициализируем счетчик
@@ -225,7 +238,7 @@ const questionTitles = [
         const currentQuestion = tests[currentQuestionIndex];
     
         // Устанавливаем заголовок в зависимости от текущего вопроса
-        questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+        questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
     
         // Очистить контейнер изображений
         imagesContainer.innerHTML = '';

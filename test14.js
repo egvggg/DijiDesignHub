@@ -1,6 +1,6 @@
 const tests = [
     {
-        question: "Вопрос 1",
+        title: "Что такое Customer Journey Map?",
         images: [
             {
                 src: "images/cjmone11.jpg",
@@ -33,7 +33,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 2",
+        title: "Основная цель построения CJM?",
         images: [
             {
                 src: "images/cjmtwo11.jpg",
@@ -66,7 +66,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 3",
+        title: "Как Customer Journey Map связан с другими инструментами UX-дизайна?",
         images: [
             {
                 src: "images/cjmthree11.jpg",
@@ -99,7 +99,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 4",
+        title: "Какие основные этапы включает в себя типичный путь клиента к покупке?",
         images: [
             {
                 src: "images/cjmfour11.jpg",
@@ -132,6 +132,7 @@ const tests = [
         ]
     },
     {
+        title: "На каком этапе пути клиента к покупке важно сфокусироваться на его эмоциях и восприятии?",
         question: "Вопрос 5",
         images: [
             {
@@ -165,6 +166,7 @@ const tests = [
         ]
     },
     {
+        title: "Что может помешать клиенту совершить покупку на ключевом этапе пути?",
         question: "Вопрос 6",
         images: [
             {
@@ -198,6 +200,7 @@ const tests = [
         ]
     },
     {
+        title: "Какой этап пути клиента к покупке является наиболее важным для компании?",
         question: "Вопрос 7",
         images: [
             {
@@ -231,6 +234,7 @@ const tests = [
         ]
     },
     {
+        title: "На каком этапе пути клиента к покупке дизайн играет наиболее важную роль?",
         question: "Вопрос 8",
         images: [
             {
@@ -264,6 +268,7 @@ const tests = [
         ]
     },
     {
+        title: "Какой из этих шагов является ключевым при составлении Customer Journey Map?",
         question: "Вопрос 9",
         images: [
             {
@@ -297,6 +302,7 @@ const tests = [
         ]
     },
     {
+        title: "Какая из этих эмоций клиента является наиболее важной для отражения в CJM?",
         question: "Вопрос 10",
         images: [
             {
@@ -330,6 +336,14 @@ const tests = [
         ]
     }]
 
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+        }
+    }
+    
+
 
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
@@ -337,20 +351,19 @@ const tests = [
     const popupMessage = document.getElementById('popup-message');
     const nextButton = document.getElementById('next-button');
     const cancelButton = document.getElementById('cancel-button');
-    const questionTitle = document.getElementById('question-title');
+    const questionTitle = document.getElementById('question-title21');
     
     // Всплывающее окно для прерывания занятия
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
-    const questionTitles = [
-        "Что такое Customer Journey Map?", "Основная цель построения CJM?",
-        "Как Customer Journey Map связан с другими инструментами UX-дизайна?", "Какие основные этапы включает в себя типичный путь клиента к покупке?",
-        "На каком этапе пути клиента к покупке важно сфокусироваться на его эмоциях и восприятии?", "Что может помешать клиенту совершить покупку на ключевом этапе пути?",
-        "Какой этап пути клиента к покупке является наиболее важным для компании?", "На каком этапе пути клиента к покупке дизайн играет наиболее важную роль?",
-        "Какой из этих шагов является ключевым при составлении Customer Journey Map?", "Какая из этих эмоций клиента является наиболее важной для отражения в CJM?"
-        ];
+    shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
     
     
         let correctAnswers = 0; // Инициализируем счетчик
@@ -359,7 +372,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
         
             // Устанавливаем заголовок в зависимости от текущего вопроса
-            questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+            questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         
             // Очистить контейнер изображений
             imagesContainer.innerHTML = '';

@@ -1,5 +1,6 @@
 const tests = [
-    {
+    {   
+        title: "Единство",
         question: "Вопрос 1",
         images: [
             {
@@ -32,7 +33,8 @@ const tests = [
             }
         ]
     },
-    {
+    {   
+        title: "Единство",
         question: "Вопрос 2",
         images: [
             {
@@ -65,7 +67,8 @@ const tests = [
             }
         ]
     },
-    {
+    {   
+        title: "Баланс",
         question: "Вопрос 3",
         images: [
             {
@@ -98,7 +101,8 @@ const tests = [
             }
         ]
     },
-    {
+    {   
+        title: "Баланс",
         question: "Вопрос 4",
         images: [
             {
@@ -131,7 +135,8 @@ const tests = [
             }
         ]
     },
-    {
+    {   
+        title: "Ритм",
         question: "Вопрос 5",
         images: [
             {
@@ -164,7 +169,8 @@ const tests = [
             }
         ]
     },
-    {
+    {   
+        title: "Ритм",
         question: "Вопрос 6",
         images: [
             {
@@ -197,7 +203,8 @@ const tests = [
             }
         ]
     },
-    {
+    {   
+        title: "Пропорции",
         question: "Вопрос 7",
         images: [
             {
@@ -230,7 +237,8 @@ const tests = [
             }
         ]
     },
-    {
+    {   
+        title: "Пространство",
         question: "Вопрос 8",
         images: [
             {
@@ -263,7 +271,8 @@ const tests = [
             }
         ]
     },
-    {
+    {   
+        title: "Пространство",
         question: "Вопрос 9",
         images: [
             {
@@ -296,7 +305,8 @@ const tests = [
             }
         ]
     },
-    {
+    {   
+        title: "Иерархия",
         question: "Вопрос 10",
         images: [
             {
@@ -329,7 +339,7 @@ const tests = [
             }
         ]
     },
-    {
+    {    title: "Иерархия",
         question: "Вопрос 11",
         images: [
             {
@@ -362,7 +372,7 @@ const tests = [
             }
         ]
     }, 
-    {
+    {    title: "Акцент",
         question: "Вопрос 12",
         images: [
             {
@@ -395,7 +405,8 @@ const tests = [
             }
         ]
     },
-    {
+    {   
+        title: "Акцент",
         question: "Вопрос 13",
         images: [
             {
@@ -430,7 +441,12 @@ const tests = [
     }
 ];
 
-
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+    }
+}
 
 
 let currentQuestionIndex = 0;
@@ -446,16 +462,13 @@ const confirmPopup = document.getElementById('confirm-popup');
 const cancelLogoutButton = document.getElementById('cancel-logout-button');
 const confirmLogoutButton = document.getElementById('confirm-logout-button');
 
-const questionTitles = [
-    "Единство", "Единство", 
-    "Баланс", "Баланс", 
-    "Ритм", "Ритм", 
-    "Пропорции", 
-    "Пространство", "Пространство", 
-    "Иерархия", "Иерархия", 
-    "Акцент", "Акцент"
-];
 
+shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
 // Переменная для отслеживания правильных ответов
 let correctAnswers = 0; // Инициализируем счетчик
 
@@ -463,7 +476,7 @@ function loadQuestion() {
     const currentQuestion = tests[currentQuestionIndex];
 
     // Устанавливаем заголовок в зависимости от текущего вопроса
-    questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+    questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
 
     // Очистить контейнер изображений
     imagesContainer.innerHTML = '';
@@ -487,6 +500,7 @@ function loadQuestion() {
         });
     });
 }
+
   
 
 function showPopup(image) {
@@ -563,6 +577,7 @@ confirmLogoutButton.onclick = () => {
     localStorage.setItem('lessonActive', lessonActive); // Сохраняем статус занятия
     window.location.href = "course1.html"; // Перенаправление на страницу курса
 };
+
 
 
 }

@@ -1,5 +1,6 @@
 const tests = [
     {
+        title: "Какой метод обучения наиболее эффективен для освоения веб-дизайна?",
         question: "Вопрос 1",
         images: [
             {
@@ -12,14 +13,14 @@ const tests = [
             {
                 src: "images/firsttest12.jpg",
                 correct: false,
-                message: 'Нет, хотя чтение книг и статей является важным для формирования теоретических знаний, это может быть недостаточно для эффективного освоения практических навыков веб-дизайна. Понимание концепций должно быть подкреплено практическими упражнениями',
+                message: 'Нет, хотя чтение книг и статей является важным для формирования теоретических знаний, это может быть недостаточно для эффективного освоения практических навыков веб-дизайна',
                 footerColor: "#FF4E51",
                 icon: "images/icon1.svg"
             },
             {
                 src: "images/firsttest13.jpg",
                 correct: true,
-                message: "Да! Практическое применение знаний и работа над реальными проектами способствуют лучшему пониманию концепций дизайна. Получение обратной связи от более опытных дизайнеров помогает улучшить навыки и исправлять ошибки, что является важной частью процесса обучения",
+                message: "Да! Практическое применение знаний и работа над реальными проектами способствуют лучшему пониманию концепций дизайна",
                 footerColor: "#4EFF84",
                 icon: "images/icon.svg"
             },
@@ -33,6 +34,7 @@ const tests = [
         ]
     },
     {
+        title: "Какой из этих факторов важен для поддержания мотивации при обучении дизайну?",
         question: "Вопрос 2",
         images: [
             {
@@ -66,6 +68,7 @@ const tests = [
         ]
     },
     {
+        title: "Что является важным элементом в создании успешного портфолио дизайнера?",
         question: "Вопрос 3",
         images: [
             {
@@ -99,6 +102,7 @@ const tests = [
         ]
     },
     {
+        title: "Какова основная цель пользовательского исследования в дизайне?",
         question: "Вопрос 4",
         images: [
             {
@@ -132,28 +136,29 @@ const tests = [
         ]
     },
     {
+        title: 'Какой из следующих подходов к дизайну наилучшим образом отражает концепцию "дизайна с учетом пользователя"?',
         question: "Вопрос 5",
         images: [
             {
                 src: "images/firsttest51.jpg",
                 correct: false,
-                message: 'Нет, этот подход ориентирован на личные вкусы дизайнера, а не на реальные потребности и желания пользователей. Дизайн с учетом пользователя должен основываться на мнении и опыте пользователей.',
+                message: 'Нет, этот подход ориентирован на личные вкусы дизайнера, а не на реальные потребности и желания пользователей. Дизайн с учетом пользователя должен основываться на мнении и опыте пользователей',
                 footerColor: "#FF4E51",
                 icon: "images/icon1.svg"
             },
             {
                 src: "images/firsttest52.jpg",
-                correct: false,
-                message: 'Нет, шаблоны могут быть полезны, но их использование без адаптации под конкретных пользователей не учитывает уникальные потребности и контекст. Дизайн должен быть нацелен на конкретную аудиторию, а не быть универсальным',
-                footerColor: "#FF4E51",
-                icon: "images/icon1.svg"
+                correct: true,
+                message: "Да! Понимание потребностей, предпочтений и поведения пользователей позволяет дизайнерам создать продукт, который соответствует ожиданиям и требованиям целевой аудитории",
+                footerColor: "#4EFF84",
+                icon: "images/icon.svg"
             },
             {
                 src: "images/firsttest53.jpg",
-                correct: true,
-                message: "Да! Векторная графика масштабируется без потери качества. Создает четкие и профессиональные изображения. Легко вносить изменения на основе отзывов. Подходит для разных платформ и устройств",
-                footerColor: "#4EFF84",
-                icon: "images/icon.svg"
+                correct: false,
+                message: 'Нет, это может привести к недостаточной персонализации. Шаблоны могут быть эффективными, но если они не учитывают потребности и особенности конечных пользователей',
+                footerColor: "#FF4E51",
+                icon: "images/icon1.svg"
             },
             {
                 src: "images/firsttest54.jpg",
@@ -165,24 +170,32 @@ const tests = [
         ]
     }]
 
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+        }
+    }
+
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const nextButton = document.getElementById('next-button');
     const cancelButton = document.getElementById('cancel-button');
-    const questionTitle = document.getElementById('question-title');
+    const questionTitle = document.getElementById('question-title21');
     
     // Всплывающее окно для прерывания занятия
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
-    const questionTitles = [
-        'Какой метод обучения наиболее эффективен для освоения веб-дизайна?', 'Какой из этих факторов важен для поддержания мотивации при обучении дизайну?',
-        'Что является важным элементом в создании успешного портфолио дизайнера?', 'Какова основная цель пользовательского исследования в дизайне?',
-        'Какой из следующих подходов к дизайну наилучшим образом отражает концепцию "дизайна с учетом пользователя"?'
-        ];
+    shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
     
     
         let correctAnswers = 0; // Инициализируем счетчик
@@ -191,7 +204,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
         
             // Устанавливаем заголовок в зависимости от текущего вопроса
-            questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+            questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         
             // Очистить контейнер изображений
             imagesContainer.innerHTML = '';

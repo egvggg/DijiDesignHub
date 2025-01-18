@@ -15,111 +15,195 @@
         <div class="progressbar" id="progressBar"></div>
     </div>
     <div class="container"> 
+        <nav class="table-of-contents">
+            <ul>
+                <li><a href="#unity" class="points">Юзабилити</a></li>
+                <ul class="unity-subsections hidden">
+                </ul>
+                <li><a href="#balance" class="points">Макет</a></li>
+                <li><a href="#rhythm" class="points">Визуальный дизайн</a></li>
+                <li><a href="#proportion" class="points">Адаптивный дизайн</a></li>
+                <li><a href="#hierarchy" class="points">Взаимодействие</a></li>
+                <li><a href="#freeplace" class="points">Навигация</a></li>
+                <li><a href="#tasks" class="points">Микровзаимодействие</a></li>
+                <li><a href="#term" class="points">Компоненты</a></li>
+                <li><a href="#term2" class="points">Модульная сетка</a></li>
+                <li><a href="#term3" class="points">Брендин</a></li>
+                <li><a href="#term4" class="points">Детализация</a></li>
+                <li><a href="#term5" class="points">Закон Фиттса</a></li>
+                <li><a href="#term6" class="points">Примеры заданий для практики</a></li>
+                <ul class="term6-subsections hidden">
+                    <div class="contant__line">
+                        <svg class="line" width="2" height="34" viewBox="0 0 2 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1V33" stroke="#698AFF" stroke-linecap="round" />
+                          </svg>  
+                    <li><a href="#task1" class="subpoints">Закон Фиттса</a></li>
+                </div>
+                    <div class="contant__line">
+                        <svg class="line" width="2" height="34" viewBox="0 0 2 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1V33" stroke="#698AFF" stroke-linecap="round" />
+                          </svg>
+                    <li><a href="#task2" class="subpoints">Детализация</a></li>
+                </div>
+                    <div class="contant__line">
+                        <svg class="line" width="2" height="34" viewBox="0 0 2 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1V33" stroke="#698AFF" stroke-linecap="round" />
+                          </svg>
+                    <li><a href="#task3" class="subpoints">Адаптивный дизайн</a></li>
+                </div>
+                </ul>
+
+            </ul>
+        </nav>
+
+        <main class="main-content">
         <h4 class="course__name">UX/UI дизайн</h4>
             <h1 class="title">UI термины</h1>
             <p class="text">UI ― пользовательский интерфейс, проще говоря ― оформление сайта: сочетания цветов, шрифты, иконки и кнопки.</p>
+            <section id="unity">
             <h2 class="title1">Юзабилити (Usability)</h2>
             <p class="text">Юзабилити — насколько легко и интуитивно понятно пользователю использовать тот или иной объект, будь то компьютерная программа, веб-сайт, мобильное приложение, бытовое устройство и т.д.</p>
             <p class="text">Высокая юзабилити означает, что пользователь может эффективно, быстро и с удовольствием использовать тот или иной продукт или сервис. Это очень важно для любых интерактивных систем, которыми пользуется человек.</p>
             <img src="images/Usability.jpg" alt="Юзабилити" class="ui__terms">
-            <p class="text2">Скриншот сайта <a href="https://www.apple.com/" class="img__link" target="_blank">  Apple</a></p>
+            <div class="image-container">
+            <p class="subtext">Скриншот сайта <a href="https://www.apple.com/" class="example__link" target="_blank">Apple</a></p>
+            </div>
             <p class="text">- Четкая структура сайта и логичная навигация позволяют быстро найти нужную информацию.
                 <br>- Простые и понятные пути совершения основных действий (например, покупка или оформление заказа).
                 <br>- Интуитивно понятный дизайн с минимумом сложных элементов.
                 <br>- Приятный и стильный визуальный дизайн.
                 <br>- Отсутствие раздражающих факторов (назойливая реклама, сложные формы и пр.).</p>
-
+            </section>
+            <section id="balance">
             <h2 class="title1">Макет (Layout)</h2>
             <p class="text">Макет —  первичный визуальный образ будущего сайта, который помогает планировать его структуру, дизайн и взаимодействие с пользователем.</p>
             <img src="images/Layuot.jpg" alt="Макет" class="ui__terms">
-            <p class="text2">Скриншот сайта про здоровье<a href="https://nicepage.com/ru/website-templates/preview/postroenie-zdorovogo-i-sbalansirovannogo-pitaniya-1324163?device=desktop" class="img__link" target="_blank">  Nicepage</a></p>
+            <div class="image-container">
+            <p class="subtext">Скриншот сайта про здоровье<a href="https://nicepage.com/ru/website-templates/preview/postroenie-zdorovogo-i-sbalansirovannogo-pitaniya-1324163?device=desktop" class="img__link" target="_blank">Nicepage</a></p>
+            </div>
             <h3 class="subtitle">Макет в веб-дизайне - это:</h3>
-            <p class="text">1.<span class="textbold"> Черновой эскиз сайта.</span>Он показывает, как будут располагаться на странице основные блоки: шапка, меню, контент, футер и т.д.</p>
+            <p class="text">1.<span class="textbold"> Черновой эскиз сайта.</span> Он показывает, как будут располагаться на странице основные блоки: шапка, меню, контент, футер и т.д.</p>
             <p class="text">2.<span class="textbold"> Прототип дизайна сайта.</span> На макете можно увидеть цветовую гамму, шрифты, иконки и другое оформление, которое будет использовано.</p>
-            <p class="text">3.<span class="textbold"> Схема навигации.</span>Макет демонстрирует, как пользователь будет перемещаться по страницам сайта, переходить по ссылкам.</p>
-            <p class="text">4.<span class="textbold"> Основа для программирования.</span>На базе макета веб-разработчики создают реальную html-верстку и программируют функциональность.</p>
-
+            <p class="text">3.<span class="textbold"> Схема навигации.</span> Макет демонстрирует, как пользователь будет перемещаться по страницам сайта, переходить по ссылкам.</p>
+            <p class="text">4.<span class="textbold"> Основа для программирования.</span> На базе макета веб-разработчики создают реальную html-верстку и программируют функциональность.</p>
+            </section>
+            
+            <section id="rhythm">
             <h2 class="title1">Визуальный дизайн (Visual Design)</h2>
             <p class="text">Визуальный дизайн —  направление дизайна, которое отвечает за создание внешнего, визуального облика объекта.</p>
             <img src="images/VisualDesign.jpg" alt="Визуальный дизай" class="ui__terms">
-            <p class="text2">Скриншот сайта <a href="https://www.svz.io/" class="img__link" target="_blank">  SVZ Design</a></p>
+            <div class="image-container">
+            <p class="subtext">Скриншот сайта <a href="https://www.svz.io/" class="example__link" target="_blank">SVZ Design</a></p>
+            </div>
             <h3 class="subtitle">Визуальный дизайн - это:</h3>
             <p class="text">1.<span class="textbold"> Создание визуального образа.</span> Визуальный дизайнер разрабатывает иллюстрации, изображения, графику, которые будут формировать внешний вид объекта.</p>
             <p class="text">2.<span class="textbold"> Формирование стиля.</span> Визуальный дизайн определяет цветовую палитру, типографику, композицию элементов, чтобы сформировать целостный визуальный стиль.</p>
-            <p class="text">3.<span class="textbold"> Улучшение взаимодействия.</span>Визуальные элементы должны облегчать восприятие и использование объекта (сайта, приложения, печатной продукции и т.д.).</p>
+            <p class="text">3.<span class="textbold"> Улучшение взаимодействия.</span> Визуальные элементы должны облегчать восприятие и использование объекта (сайта, приложения, печатной продукции и т.д.).</p>
             <p class="text">4.<span class="textbold"> Передача идеи/настроения.</span> Визуальный дизайн помогает донести определенные эмоции, ценности, идеи через визуальные образы.</p>
-
+            </section>
+             
+            <section id="proportion">
             <h2 class="title1">Адаптивный дизайн</h2>
             <p class="text">Адаптивный дизайн — это подход в веб-дизайне, который обеспечивает оптимальное отображение контента на различных устройствах и экранах, подстраивая макет и элементы интерфейса под конкретные размеры и разрешения экрана.</p>
             <img src="images/responsivedesign.jpg" alt="Адаптивный дизайн" class="ui__terms">
-            <p class="text2"><a href="https://s-webs.ru/blog/pochemu-vazhen-adaptivnyy-dizayn-sayta/" class="img__link" target="_blank">Изображение</a></p>
+            <p class="text2"><a href="https://s-webs.ru/blog/pochemu-vazhen-adaptivnyy-dizayn-sayta/" class="example__link" target="_blank">Изображение</a></p>
             <h3 class="subtitle">Адаптивный дизайн - это:</h3>
             <p class="text">1.<span class="textbold"> Гибкая верстка.</span> Контент, изображения и другие элементы меняют свои размеры и расположение в зависимости от экрана (компьютер, планшет, смартфон и т.д.).</p>
             <p class="text">2.<span class="textbold"> Единый дизайн.</span> Независимо от устройства, пользователь видит один и тот же дизайн сайта, но с оптимальным отображением на его экране.</p>
             <p class="text">3.<span class="textbold"> Улучшение взаимодействия.</span> Адаптивный дизайн делает управление сайтом удобным и на мобильных устройствах, и на компьютерах.</p>
             <p class="text">4.<span class="textbold"> Повышение конверсии.</span> Хороший адаптивный дизайн повышает вовлечённость и продажи, т.к. сайт отлично смотрится и работает на любом экране.</p>
-
+            </section>
+             
+            <section id="hierarchy">
             <h2 class="title1">Взаимодействие (Interaction)</h2>
             <p class="text">Взаимодействие — область, которая отвечает за то, как пользователи взаимодействуют с веб-сайтом или веб-приложением.</p>
             <img src="images/Interaction.jpg" alt="Взаимодействие" class="ui__terms">
-            <p class="text2">Скриншот сайта интернет-магазина<a href="https://www.21vek.by//" class="img__link" target="_blank">  21 vek</a></p>
+            <div class="image-container">
+            <p class="subtext">Скриншот сайта интернет-магазина<a href="https://www.21vek.by//" class="example__link" target="_blank">21 vek</a></p>
+            </div>
             <p class="text">Понятная и удобная форма оформления заказа с пошаговым процессом.
                 Возможность выбора способа доставки и оплаты.</p>
-
+            </section>
+             
+            <section id="freeplace">
             <h2 class="title1">Навигация (Navigation)</h2>
             <p class="text">Навигация — система, которая помогает пользователям перемещаться по сайту и находить нужную информацию или функции. </p>
             <img src="images/Navigation.jpg" alt="Навигация" class="ui__terms">
-            <p class="text2">Скриншот сайта интернет-магазина<a href="https://www.21vek.by//" class="img__link" target="_blank">  21 vek</a></p>
+            <div class="image-container">
+            <p class="subtext">Скриншот сайта интернет-магазина<a href="https://www.21vek.by//" class="example__link" target="_blank">21 vek</a></p>
+            </div>
             <h3 class="subtitle">Навигация - это:</h3>
             <p class="text">1.<span class="textbold"> Меню и ссылки.</span> Главное меню сайта, которое позволяет переходить между основными разделами. Ссылки внутри текста, ведущие к связанному контенту. Дополнительные меню, например, в футере или боковой панели.</p>
             <p class="text">2.<span class="textbold"> Структура сайта.</span>  Логичная иерархия и группировка страниц и разделов. Четкое разделение контента по категориям и подкатегориям.</p>
             <p class="text">3.<span class="textbold"> Поиск и фильтры.</span> Возможность быстрого поиска по сайту с помощью строки поиска. Фильтры, позволяющие сортировать и находить нужный контент.</p>
             <p class="text">4.<span class="textbold"> Вспомогательные элементы.</span> Кнопки "Назад", "Домой", "Вверх" для быстрого перемещения.</p>
-
+            </section>
+            
+            <section id="tasks">
             <h2 class="title1">Микровзаимодействие (Micro-interactions)</h2>
             <p class="text">Микровзаимодействие — небольшие, но важные элементы взаимодействия, которые повышают удобство использования сайта и улучшают общий пользовательский опыт.</p>
             <img src="images/Micro-interactions.jpg" alt="Микровзаимодействие" class="ui__terms">
-            <p class="text2">Скриншот сайта<a href="https://www.wayside.studio/" class="img__link" target="_blank">  Wayside studio</a></p>
+            <div class="image-container">
+            <p class="subtext">Скриншот сайта<a href="https://www.wayside.studio/" class="example__link" target="_blank">Wayside studio</a></p>
+            </div>
             <h3 class="subtitle">Микровзаимодействие - это:</h3>
             <p class="text">1.<span class="textbold"> Мелкие, но значимые детали интерфейса.</span> Анимации при наведении курсора на элементы. Подсветка активных ссылок или элементов управления. Всплывающие подсказки, объясняющие функции элементов.</p>
             <p class="text">2.<span class="textbold"> Быстрая визуальная обратная связь.</span>  Изменение состояния кнопок или полей при взаимодействии. Индикаторы загрузки или выполнения действий.</p>
             <p class="text">3.<span class="textbold"> Плавные и интуитивные переходы.</span> Анимированные переходы между страницами или разделами сайта. Плавная прокрутка при переходе по ссылкам.</p>
-
+            </section>
+            
+            <section id="term">
             <h2 class="title1">Компоненты (Components)</h2>
             <p class="text">Компоненты — отдельные, повторно используемые элементы дизайна.</p>
             <img src="images/Components.jpg" alt="Компоненты" class="ui__terms">
-            <p class="text2">Скриншот сайта<a href="https://www.vouschurch.com/" class="img__link" target="_blank">  VOUS Church</a></p>
+            <div class="image-container">
+            <p class="subtext">Скриншот сайта<a href="https://www.vouschurch.com/" class="example__link" target="_blank">VOUS Church</a></p>
+            </div>
             <h3 class="subtitle">Примеры компонентов в веб-дизайне::</h3>
             <p class="text">1.<span class="textbold"> Кнопки</span> Различные виды кнопок (первичные, вторичные, с иконками и т.д.) Кнопки с разными состояниями (обычное, при наведении, активное и т.д.)</p>
             <p class="text">2.<span class="textbold"> Формы</span>  Поля ввода текста. Выпадающие списки. Чекбоксы, радио-кнопки. Кнопки отправки формы.</p>
             <p class="text">3.<span class="textbold"> Меню.</span> Главное меню сайта. Выпадающие подменю. Мобильное меню.</p>
-
+            </section>
+            
+            <section id="term2">
             <h2 class="title1">Модульная сетка (Grid System)</h2>
             <p class="text">Модульная сетка — система расположения элементов на странице, основанная на использовании вертикальных и горизонтальных линий, которые делят пространство на ровные ячейки или модули.</p>
             <img src="images/GridSystem.jpg" alt="Модульная сетка" class="ui__terms">
-            <p class="text2">Изображение: Stephen Kelman<a href="https://www.behance.net/gallery/124814643/Swiss-Style-A0-Poster-Grid-System-for-InDesign?tracking_source=search_projects|grid+system+web+app&l=4" class="img__link" target="_blank">  Behance</a></p>
-
+            <div class="image-container">
+            <p class="subtext">Изображение: Stephen Kelman<a href="https://www.behance.net/gallery/124814643/Swiss-Style-A0-Poster-Grid-System-for-InDesign?tracking_source=search_projects|grid+system+web+app&l=4" class="example__link" target="_blank">Behance</a></p>
+            </div>
+            </section>
+            
+            <section id="term3">
             <h2 class="title1">Брендинг (Branding)</h2>
             <p class="text">Брендинг — создание и продвижение уникального визуального образа бренда в онлайн-среде.</p>
             <img src="images/Branding.jpg" alt="Брендинг" class="ui__terms">
-            <p class="text2">Скриншот сайта<a href="https://coca-cola.by/" class="img__link" target="_blank"> Coca Cola</a></p>
+            <div class="image-container">
+            <p class="subtext">Скриншот сайта<a href="https://coca-cola.by/" class="example__link" target="_blank">Coca Cola</a></p>
+            </div>
             <h3 class="subtitle">Брендинг - это:</h3>
             <p class="text">1.<span class="textbold"> Визуальная идентификация бренда.</span> Разработка логотипа, фирменных цветов, шрифтов и других визуальных элементов. Создание узнаваемого и последовательного стиля оформления сайта.</p>
             <p class="text">2.<span class="textbold"> Разработка бренд-бука.</span> Формализация правил использования визуальных элементов бренда. Определение стилистики контента, фотографий, иллюстраций и других медиа.</p>
             <p class="text">3.<span class="textbold"> Применение бренда на сайте.</span> Использование логотипа, фирменных цветов и шрифтов в дизайне. Создание узнаваемого и запоминающегося визуального стиля.</p>
             <p class="text">4.<span class="textbold"> Повышение узнаваемости и запоминаемости.</span> Формирование устойчивой ассоциации между брендом и его визуальным образом. Повторение фирменных элементов для укрепления их в сознании пользователей.</p>
-
+            </section>
+            
+            <section id="term4">
             <h2 class="title1">Детализация (Fidelity)</h2>
             <p class="text">Детализация — процесс доработки и проработки всех элементов интерфейса до мельчайших деталей.</p>
             <img src="images/Fidelity.jpg" alt="Детализация" class="ui__terms">
-            <p class="text2">Скриншот сайта<a href="https://eu.puma.com/de/en/home?srsltid=AfmBOoo_cg2sO2xsJtzsgs9Y9oqoYz7Ywky8KgXHKnQ9ET40fROVZNTH" class="img__link" target="_blank"> Puma</a></p>
+            <div class="image-container">
+            <p class="subtext">Скриншот сайта<a href="https://eu.puma.com/de/en/home?srsltid=AfmBOoo_cg2sO2xsJtzsgs9Y9oqoYz7Ywky8KgXHKnQ9ET40fROVZNTH" class="example__link" target="_blank">Puma</a></p>
+            </div>
             <p class="text">Для каждой расцветки товара отдельное изображение.</p>
             <h3 class="subtitle">Детализация - это:</h3>
             <p class="text">1.<span class="textbold"> Тщательная проработка каждого элемента дизайна.</span> Кнопки, поля ввода, иконки, заголовки и другие компоненты. Проработка их внешнего вида, размеров, взаимного расположения.</p>
             <p class="text">2.<span class="textbold"> Уделение внимания мелочам.</span> Отступы, межстрочные интервалы, размеры шрифтов. Тени, градиенты, эффекты наведения и другие визуальные детали.</p>
             <p class="text">3.<span class="textbold"> Создание продуманных переходов и анимаций.</span> Плавное открытие/закрытие модальных окон, выпадающих меню и т.д. Анимации взаимодействия, например, нажатия на кнопку.</p>
             <p class="text">4.<span class="textbold"> Обеспечение визуальной гармонии.</span> Согласованность стилей и элементов по всему сайту. Соблюдение пропорций, баланса и ритма на странице.</p>
-
+            </section>
+            
+            <section id="term5">
             <h2 class="title1">Закон Фиттса (Fitts' Law) </h2>
             <p class="text">Закон Фиттса — ринцип, описывающий, как размер и расположение интерактивных элементов (например, кнопок, ссылок) влияют на их удобство использования.</p>
             <h3 class="subtitle">Закон Фиттса - это:</h3>
@@ -127,14 +211,17 @@
             <p class="text">2.<span class="textbold"> Расстояние до элемента.</span> Чем ближе расположен интерактивный элемент, тем быстрее до него можно "дотянуться". Элементы, находящиеся близко к курсору или пальцам, легче задействовать.</p>
             <p class="text">3.<span class="textbold"> Баланс размера и расстояния.</span> Если элемент маленький, его нужно располагать ближе к пользователю. Если элемент большой, его можно разместить дальше, и пользователю будет все равно удобно.</p>
             <p class="text">4.<span class="textbold"> Применение на практике.</span> Создание достаточно крупных кнопок и ссылок для удобного нажатия. Размещение важных интерактивных элементов в зонах, удобных для взаимодействия. Использование дополнительных целевых областей вокруг элементов.</p>
-
-            <h2 class="title1">Примеры заданий для практики</h2>
-            <h3 class="subtitle">Закон Фиттса</h3>
+            </section>
+            
+            <section id="term6">
+            <h2 class="title1">Практика</h2>
+            <h3 class="subtitle" id="task1">Закон Фиттса</h3>
             <p class="text">Создай интерфейс для мобильного приложения (например, приложение для заказа такси). Разработай экран "Заказ такси", где будет кнопка "Вызвать такси". Примени Закон Фиттса, увеличив размер кнопки в соответствии с ситуацией, когда она будет активно использоваться. Измерь и сравни эффективные расстояния для различных элементов интерфейса, таких как кнопки и иконки, и оптимизируй их расположение.</p>
-            <h3 class="subtitle">Детализация</h3>
+            <h3 class="subtitle" id="task2">Детализация</h3>
             <p class="text">Выбери продукт (например, обувь) и создай макет страницы. Подумай о деталях — добавь вариации цвета, размеры, отзывы и другие элементы, которые могут помочь пользователю.</p>
-            <h3 class="subtitle"> Адаптивный дизайн</h3>
+            <h3 class="subtitle" id="task3"> Адаптивный дизайн</h3>
             <p class="text">Начни с дизайна обычной версии сайта для десктопа. Определи ключевые элементы страницы. Затем создай версию для планшета и мобильного устройства, адаптируя элементы к меньшим экранам.</p>
+            </section>
 
             <section class="section">
                 <div class="section__inner">
@@ -142,6 +229,7 @@
                     <a href="test9.html" class="article__link">Далее</a>
                 </div>
             </section>
+            </main>
 
             <script>
                 // Создаем новый наблюдатель с помощью Intersection Observer
@@ -163,6 +251,101 @@
                 articles.forEach(article => {
                     observer.observe(article);
                 });
+
+                document.addEventListener("DOMContentLoaded", function () {
+    const unitySubsections = document.querySelector('.unity-subsections');
+    const balanceSubsections = document.querySelector('.balance-subsections');
+    
+    const rhythmSubsections = document.querySelector('.rhythm-subsections');
+    const proportionSubsections = document.querySelector('.proportion-subsections');
+    const hierarchySubsections = document.querySelector('.hierarchy-subsections');
+    const freeplaceSubsections = document.querySelector('.freeplace-subsections');
+    const tasksSubsections = document.querySelector('.tasks-subsections');
+    const termSubsections = document.querySelector('.term-subsections');
+    const term2Subsections = document.querySelector('.term2-subsections');
+    const term3Subsections = document.querySelector('.term3-subsections');
+    const term4Subsections = document.querySelector('.term4-subsections');
+    const term5Subsections = document.querySelector('.term5-subsections');
+    const term6Subsections = document.querySelector('.term6-subsections');
+
+    // Навигационные ссылки
+    const links = {
+        unity: document.querySelector('a[href="#unity"]'),
+        balance: document.querySelector('a[href="#balance"]'),
+        
+        rhythm: document.querySelector('a[href="#rhythm"]'),
+        proportion: document.querySelector('a[href="#proportion"]'),
+        hierarchy: document.querySelector('a[href="#hierarchy"]'),
+        freeplace: document.querySelector('a[href="#freeplace"]'),
+        tasks: document.querySelector('a[href="#tasks"]'),
+        term: document.querySelector('a[href="#term"]'),
+        term2: document.querySelector('a[href="#term2"]'),
+        term3: document.querySelector('a[href="#term3"]'),
+        term4: document.querySelector('a[href="#term4"]'),
+        term5: document.querySelector('a[href="#term5"]'),
+        term6: document.querySelector('a[href="#term6"]'),
+    };
+
+    // Функция для отслеживания позиции прокрутки
+    function onScroll() {
+        const sections = {
+            unity: document.getElementById('unity'),
+            balance: document.getElementById('balance'),
+           
+            rhythm: document.getElementById('rhythm'),
+            proportion: document.getElementById('proportion'),
+            hierarchy: document.getElementById('hierarchy'),
+            freeplace: document.getElementById('freeplace'),
+            tasks: document.getElementById('tasks'),
+            term: document.getElementById('term'),
+            term2: document.getElementById('term2'),
+            term3: document.getElementById('term3'),
+            term4: document.getElementById('term4'),
+            term5: document.getElementById('term5'),
+            term6: document.getElementById('term6'),
+        };
+
+        // Обходим все секции и проверяем видимость
+        for (const [key, section] of Object.entries(sections)) {
+            const offsetTop = section.getBoundingClientRect();
+            const link = links[key];
+
+            if (offsetTop.top < window.innerHeight && offsetTop.bottom > 0) {
+                // Секция видима
+                if (key === 'unity') {
+                    unitySubsections.classList.remove('hidden');
+                    link.classList.add('active');
+                } else {
+                    const subsection = document.querySelector(`.${key}-subsections`);
+                    if (subsection) {
+                        subsection.classList.remove('hidden');
+                    }
+                    link.classList.add('active');
+                }
+            } else {
+                // Секция не видима
+                if (key === 'unity') {
+                    unitySubsections.classList.add('hidden');
+                    link.classList.remove('active');
+                } else {
+
+                    const subsection = document.querySelector(`.${key}-subsections`);
+                    if (subsection) {
+                        subsection.classList.add('hidden');
+                    }
+                    link.classList.remove('active');
+                }
+            }
+        }
+    }
+
+    
+
+    // Подписка на событие прокрутки
+    window.addEventListener('scroll', onScroll);
+
+    
+});
             </script>
     </div>
 </body>

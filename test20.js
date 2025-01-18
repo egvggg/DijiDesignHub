@@ -1,6 +1,6 @@
 const tests = [
     {
-        question: "Вопрос 1",
+        title: "Какой вид обратной связи наиболее ценен после презентации концепции?",
         images: [
             {
                 src: "images/graphicsone1.jpg",
@@ -33,7 +33,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 2",
+        title: "Какую роль играет графика в улучшении пользовательского опыта на веб-сайте?",
         images: [
             {
                 src: "images/graphicstwo1.jpg",
@@ -66,7 +66,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 3",
+        title: "Что из нижеперечисленного является примером графического элемента в веб-дизайне?",
         images: [
             {
                 src: "images/graphicsthree1.jpg",
@@ -99,7 +99,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 4",
+        title: "Какой из перечисленных факторов влияет на выбор графики для веб-дизайна?",
         images: [
             {
                 src: "images/graphicsfour1.jpg",
@@ -132,7 +132,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 5",
+        title: "Какой принцип важен для использования графики в веб-дизайне?",
         images: [
             {
                 src: "images/graphicsfive1.jpg",
@@ -165,7 +165,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 6",
+        title: "Какой элемент графики часто используется для создания навигации на сайте?",
         images: [
             {
                 src: "images/graphicssix1.jpg",
@@ -198,7 +198,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 7",
+        title: "Какое из следующих утверждений верно о векторной графике?",
         images: [
             {
                 src: "images/graphicseven1.jpg",
@@ -231,7 +231,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 8",
+        title: 'Что такое "дизайн адаптивной графики"?',
         images: [
             {
                 src: "images/graphicseight1.jpg",
@@ -264,7 +264,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 9",
+        title: "Где рекомендуется использовать фоновую графику?",
         images: [
             {
                 src: "images/graphicsnine1.jpg",
@@ -297,7 +297,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 10",
+        title: "Где можно использовать иконки в веб-дизайне?",
         images: [
             {
                 src: "images/graphicsten1.jpg",
@@ -330,26 +330,32 @@ const tests = [
         ]
     }]
 
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+        }
+    }
+
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const nextButton = document.getElementById('next-button');
     const cancelButton = document.getElementById('cancel-button');
-    const questionTitle = document.getElementById('question-title');
+    const questionTitle = document.getElementById('question-title21');
     
     // Всплывающее окно для прерывания занятия
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
-    const questionTitles = [
-        'Какой вид обратной связи наиболее ценен после презентации концепции?', 'Какую роль играет графика в улучшении пользовательского опыта на веб-сайте?',
-        'Что из нижеперечисленного является примером графического элемента в веб-дизайне?', 'Какой из перечисленных факторов влияет на выбор графики для веб-дизайна?',
-        'Какой принцип важен для использования графики в веб-дизайне?', 'Какой элемент графики часто используется для создания навигации на сайте?',
-        'Какое из следующих утверждений верно о векторной графике?', 'Что такое "дизайн адаптивной графики"?',
-        'Где рекомендуется использовать фоновую графику?', 'Где можно использовать иконки в веб-дизайне?'
-        ];
+    shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
     
     
         let correctAnswers = 0; // Инициализируем счетчик
@@ -358,7 +364,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
         
             // Устанавливаем заголовок в зависимости от текущего вопроса
-            questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+            questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         
             // Очистить контейнер изображений
             imagesContainer.innerHTML = '';

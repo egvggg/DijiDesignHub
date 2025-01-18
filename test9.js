@@ -1,6 +1,6 @@
 const tests = [
     {
-        question: "Вопрос 1",
+        title: "Для чего закон Фиттса используется в UX-дизайне?",
         images: [
             {
                 src: "images/FittsLaw1.jpg",
@@ -33,7 +33,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 2",
+        title: "Как закон Фиттса влияет на размеры элементов интерфейса?",
         images: [
             {
                 src: "images/FittsLaw5.jpg",
@@ -66,7 +66,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 3",
+        title: "Что такое юзабилити?",
         images: [
             {
                 src: "images/Usability1.jpg",
@@ -99,7 +99,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 4",
+        title: "Как юзабилити связана с удовлетворенностью пользователей?",
         images: [
             {
                 src: "images/Usability5.jpg",
@@ -132,7 +132,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 5",
+        title: "Что такое взаимодействие?",
         images: [
             {
                 src: "images/Interaction1.jpg",
@@ -165,7 +165,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 6",
+        title: "Какие основные компоненты включает в себя взаимодействие в дизайне?",
         images: [
             {
                 src: "images/Interaction5.jpg",
@@ -198,7 +198,7 @@ const tests = [
         ]
     }, 
     {
-        question: "Вопрос 7",
+        title: "Что такое навигация?",
         images: [
             {
                 src: "images/Navigation1.jpg",
@@ -231,7 +231,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 8",
+        title: "Какие элементы могут входить в систему навигации интерфейса?",
         images: [
             {
                 src: "images/Navigation5.jpg",
@@ -264,7 +264,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 9",
+        title: "Что такое микровзаимодействие?",
         images: [
             {
                 src: "images/Micro-interactions1.jpg",
@@ -297,7 +297,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 10",
+        title: "Какие примеры микровзаимодействий можно встретить в современных интерфейсах?",
         images: [
             {
                 src: "images/Micro-interactions5.jpg",
@@ -330,7 +330,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 11",
+        title: "Как компоненты влияют на общую концепцию и юзабилити интерфейса?",
         images: [
             {
                 src: "images/Components1.jpg",
@@ -363,7 +363,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 12",
+        title: "Что такое брендинг?",
         images: [
             {
                 src: "images/Branding1.jpg",
@@ -396,7 +396,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 13",
+        title: "Как брендинг связан с восприятием пользователей?",
         images: [
             {
                 src: "images/Branding5.jpg",
@@ -429,7 +429,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 14",
+        title: "Что такое детализация?",
         images: [
             {
                 src: "images/Fidelity1.jpg",
@@ -462,7 +462,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 15",
+        title: "Где применяется детализация в интерфейсах?",
         images: [
             {
                 src: "images/Fidelity5.jpg",
@@ -495,30 +495,33 @@ const tests = [
         ]
     }]
 
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+        }
+    }
+    
+
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const nextButton = document.getElementById('next-button');
     const cancelButton = document.getElementById('cancel-button');
-    const questionTitle = document.getElementById('question-title');
+    const questionTitle = document.getElementById('question-title21');
     
     // Всплывающее окно для прерывания занятия
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
-    const questionTitles = [
-        "Для чего закон Фиттса используется в UX-дизайне?", "Как закон Фиттса влияет на размеры элементов интерфейса?",
-        "Что такое юзабилити?", "Как юзабилити связана с удовлетворенностью пользователей?",
-        "Что такое взаимодействие?", "Какие основные компоненты включает в себя взаимодействие в дизайне?",
-        "Что такое навигация?", "Какие элементы могут входить в систему навигации интерфейса?",
-        "Что такое микровзаимодействие?", "Какие примеры микровзаимодействий можно встретить в современных интерфейсах?",
-        "Как компоненты влияют на общую концепцию и юзабилити интерфейса?", " Что такое брендинг?",
-        "Как брендинг связан с восприятием пользователей?", " Что такое детализация?",
-        "Где применяется детализация в интерфейсах?"
-    
-    ];
+    shuffle(tests);
+
+    // Перемешиваем изображения для каждого вопроса
+    tests.forEach(test => {
+        shuffle(test.images);
+    });
     
     
         let correctAnswers = 0; // Инициализируем счетчик
@@ -527,7 +530,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
         
             // Устанавливаем заголовок в зависимости от текущего вопроса
-            questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+            questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         
             // Очистить контейнер изображений
             imagesContainer.innerHTML = '';

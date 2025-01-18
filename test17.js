@@ -1,6 +1,6 @@
 const tests = [
     {
-        question: "Вопрос 1",
+        title: "Основная цель использования гайдлайнов в дизайне?",
         images: [
             {
                 src: "images/guidlineone1.jpg",
@@ -33,7 +33,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 2",
+        title: "Каким образом гайдлайны способствуют повышению эффективности дизайна?",
         images: [
             {
                 src: "images/guidlinetwo1.jpg",
@@ -66,7 +66,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 3",
+        title: "Что включают в себя гайдлайны?",
         images: [
             {
                 src: "images/guidlinethree1.jpg",
@@ -99,7 +99,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 4",
+        title: "Что может произойти, если в организации отсутствуют четкие дизайн-гайдлайны?",
         images: [
             {
                 src: "images/guidlinefour1.jpg",
@@ -132,7 +132,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 5",
+        title: "Какая главная особенность Material Design отличает его от других дизайн-систем?",
         images: [
             {
                 src: "images/guidlinefive1.jpg",
@@ -165,7 +165,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 6",
+        title: "Какая область применения является основной для Google Material Design?",
         images: [
             {
                 src: "images/guidlinesix1.jpg",
@@ -198,7 +198,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 7",
+        title: "Какова основная цель Apple Human Interface Guidelines?",
         images: [
             {
                 src: "images/guidlineseven1.jpg",
@@ -231,7 +231,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 8",
+        title: "Какая основная особенность дизайна Apple продуктов в соответствии с HIG?",
         images: [
             {
                 src: "images/guidlineight1.jpg",
@@ -264,7 +264,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 9",
+        title: "Какой из подходов к дизайну более ориентирован на метафору физического мира?",
         images: [
             {
                 src: "images/guidlinenine1.jpg",
@@ -297,7 +297,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 10",
+        title: "Какой из подходов к дизайну в большей степени акцентирует принцип единообразия?",
         images: [
             {
                 src: "images/guidlineten1.jpg",
@@ -331,26 +331,34 @@ const tests = [
     }
    ]
 
+   function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+    }
+}
+
+
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const nextButton = document.getElementById('next-button');
     const cancelButton = document.getElementById('cancel-button');
-    const questionTitle = document.getElementById('question-title');
+    const questionTitle = document.getElementById('question-title21');
     
     // Всплывающее окно для прерывания занятия
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
-    const questionTitles = [
-        'Основная цель использования гайдлайнов в дизайне?', 'Каким образом гайдлайны способствуют повышению эффективности дизайна?',
-        'Что включают в себя гайдлайны?', 'Что может произойти, если в организации отсутствуют четкие дизайн-гайдлайны?',
-        'Какая главная особенность Material Design отличает его от других дизайн-систем?', 'Какая область применения является основной для Google Material Design?',
-        'Какова основная цель Apple Human Interface Guidelines?', 'Какая основная особенность дизайна Apple продуктов в соответствии с HIG?',
-        'Какой из подходов к дизайну более ориентирован на метафору физического мира?', 'Какой из подходов к дизайну в большей степени акцентирует принцип единообразия?'
-        ];
+    
+shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
     
     
         let correctAnswers = 0; // Инициализируем счетчик
@@ -359,7 +367,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
         
             // Устанавливаем заголовок в зависимости от текущего вопроса
-            questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+            questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         
             // Очистить контейнер изображений
             imagesContainer.innerHTML = '';

@@ -186,30 +186,21 @@ background-color: #fff; /* Цвет по умолчанию */
 }
 
 @media (max-width: 900px)  {
-    #question-title{
+    #question-title, #question-title21{
         font-size: 40px;
     }
-    .images__container {
-        grid-template-columns: none; 
+    .images__container img {
+        width: 100%; 
+        height: auto; 
+        border-radius: 10px;
     }
 }
 
-@media (max-width: 780px)  {
-    .images__container {
-        grid-template-columns: none; 
+@media (max-width: 500px){
+    #popup-message {
+        padding: 40px 10px;
     }
 }
-
-
-
-
-@media (max-width: 601px) {
-    .images__container {
-        grid-template-columns: none; 
-    }
-}
-
-
 
 
 @media (max-width: 480px){
@@ -224,14 +215,19 @@ background-color: #fff; /* Цвет по умолчанию */
     #confirm-logout-button{
         margin-bottom: 50px;
     }
+    
+    .images__container{
+       gap: 10px;
+    }
 
-    .popup-footer2{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 10px; 
+    #question-title {
+        font-size: 30px;
+        padding-bottom: 30px;
     }
     
+    #question-title21 {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 430px) {
@@ -242,10 +238,8 @@ background-color: #fff; /* Цвет по умолчанию */
 }
 
 @media (max-width: 414px) {
-   
-
     #next-button{
-        width: 200px;
+        width: 190px;
     }
 
     #cancel-logout-button{
@@ -268,8 +262,12 @@ background-color: #fff; /* Цвет по умолчанию */
 
 @media (max-width: 390px) {
     #next-button{
-        width: 190px;
+        width: 170px;
         height: 62px;
+    }
+
+    #title__test21{
+        font-size: 20px;
     }
     
 }
@@ -277,7 +275,7 @@ background-color: #fff; /* Цвет по умолчанию */
 
 @media (max-width: 360px) {
     #next-button{
-        width: 170px;
+        width: 155px;
     }
 
     .popup-footer{

@@ -1,5 +1,6 @@
 const tests = [
     {
+        title: "Принцип сходства",
         question: "Вопрос 1",
         questionText2: `
         Для чего на сайте Zara используется принцип сходства?
@@ -40,6 +41,7 @@ const tests = [
         ]
     },
     {
+        title: "Принцип сходства",
         question: "Вопрос 2",
         questionText2: `
          Где ты видишь применение принципа сходства на сайте музыкальной группы U2?
@@ -80,6 +82,7 @@ const tests = [
         ]
     },
     {
+        title: "Принцип близости",
         question: "Вопрос 3",
         questionText2: `
         Для чего на сайте Музея современного искусства используется принцип близости?
@@ -120,6 +123,7 @@ const tests = [
         ]
     },
     {
+        title: "Принцип близости",
         question: "Вопрос 4",
         questionText2: `
         Для чего на сайте Zara используется принцип близости?
@@ -160,6 +164,7 @@ const tests = [
         ]
     },
     {
+        title: "Принцип замкнутости",
         question: "Вопрос 5",
         questionText2: `
         Где ты видишь применение принципа замкнутости на сайте музыкальной группы U2?
@@ -200,6 +205,7 @@ const tests = [
         ]
     },
     {
+        title: "Принцип замкнутости",
         question: "Вопрос 6",
         questionText2: `
         Для чего на сайте Музея современного искусства используется принцип замкнутости?
@@ -240,6 +246,7 @@ const tests = [
         ]
     },
     {
+        title: "Принцип непрерывности",
         question: "Вопрос 7",
         questionText2: `
         Для чего на сайте Shutterstock используется принцип непрерывности?
@@ -280,6 +287,7 @@ const tests = [
         ]
     },
     {
+        title: "Принцип непрерывности",
         question: "Вопрос 8",
         questionText2: `
         Для чего на сайте Zara используется принцип непрерывности?
@@ -320,6 +328,7 @@ const tests = [
         ]
     },
     {
+        title: "Принцип фигуры и фона",
         question: "Вопрос 9",
         questionText2: `
         Для чего на сайте Pentagram используется принцип фигуры и фона?
@@ -361,6 +370,14 @@ const tests = [
     }
 ]
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+    }
+}
+
+
     let currentQuestionIndex = 0;
 const imagesContainer = document.getElementById('imagesContainer');
 const popup = document.getElementById('popup');
@@ -374,13 +391,12 @@ const confirmPopup = document.getElementById('confirm-popup');
 const cancelLogoutButton = document.getElementById('cancel-logout-button');
 const confirmLogoutButton = document.getElementById('confirm-logout-button');
 
-const questionTitles = [
-    "Принцип сходства", "Принцип сходства",
-    "Принцип близости", "Принцип близости",
-    "Принцип замкнутости",  "Принцип замкнутости",
-    "Принцип непрерывности",  "Принцип непрерывности",
-    "Принцип фигуры и фона"
-];
+shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
 
 
     let correctAnswers = 0; // Инициализируем счетчик
@@ -389,7 +405,7 @@ const questionTitles = [
         const currentQuestion = tests[currentQuestionIndex];
     
         // Устанавливаем заголовок в зависимости от текущего вопроса
-        questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+        questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         const questionImage = document.getElementById('questionImage');
         questionImage.src = currentQuestion.questionImage; // Установка вопроса изображения
         questionImage.alt = currentQuestion.question; // Установка доступного текста для вопроса

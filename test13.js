@@ -1,7 +1,7 @@
 const tests = [
     {
         
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/userflowone1.jpg",
         images: [
             {
@@ -35,7 +35,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/userflowone2.jpg",
         images: [
             {
@@ -69,7 +69,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/userflowone3.jpg",
         images: [
             {
@@ -103,7 +103,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/userflowone4.jpg",
         images: [
             {
@@ -137,7 +137,7 @@ const tests = [
         ]
     },
     {
-        question: "Цель составления User Flow?",
+        title: "Цель составления User Flow?",
         images: [
             {
                 src: "images/userflowtwo11.jpg",
@@ -170,7 +170,7 @@ const tests = [
         ]
 },
 {
-    question: "Какие ключевые аспекты должен учитывать User Flow?",
+    title: "Какие ключевые аспекты должен учитывать User Flow?",
     images: [
         {
             src: "images/userflowtwo21.jpg",
@@ -203,7 +203,7 @@ const tests = [
     ]
 },
 {
-    question: "Какие этапы обычно включает в себя User Flow?",
+    title: "Какие этапы обычно включает в себя User Flow?",
     images: [
         {
             src: "images/userflowtwo31.jpg",
@@ -236,7 +236,7 @@ const tests = [
     ]
 },
 {
-    question: "Что отличает User Flow от пользовательских сценариев?",
+    title: "Что отличает User Flow от пользовательских сценариев?",
     images: [
         {
             src: "images/userflowtwo41.jpg",
@@ -269,7 +269,7 @@ const tests = [
     ]
 },
 {
-    question: "Какие преимущества дает использование User Flow в разработке продукта?",
+    title: "Какие преимущества дает использование User Flow в разработке продукта?",
     images: [
         {
             src: "images/userflowtwo51.jpg",
@@ -302,7 +302,7 @@ const tests = [
     ]
 },
 {
-    question: "Как User Flow может помочь в принятии решений при разработке продукта?",
+    title: "Как User Flow может помочь в принятии решений при разработке продукта?",
     images: [
         {
             src: "images/userflowtwo61.jpg",
@@ -336,6 +336,13 @@ const tests = [
 }
 ]
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+    }
+}
+
 
 let currentQuestionIndex = 0;
 const imagesContainer = document.getElementById('imagesContainer');
@@ -343,12 +350,19 @@ const popup = document.getElementById('popup');
 const popupMessage = document.getElementById('popup-message');
 const nextButton = document.getElementById('next-button');
 const cancelButton = document.getElementById('cancel-button');
-const questionTitle = document.getElementById('question-title');
+const questionTitle = document.getElementById('question-title21');
 
 // Всплывающее окно для прерывания занятия
 const confirmPopup = document.getElementById('confirm-popup');
 const cancelLogoutButton = document.getElementById('cancel-logout-button');
 const confirmLogoutButton = document.getElementById('confirm-logout-button');
+
+shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
 
 
 
@@ -358,7 +372,7 @@ const confirmLogoutButton = document.getElementById('confirm-logout-button');
         const currentQuestion = tests[currentQuestionIndex];
 
 // Устанавливаем заголовок в зависимости от текущего вопроса
-questionTitle.textContent = currentQuestion.question || "Вопрос не найден";
+questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
 
 // Устанавливаем изображение вопроса
 const questionImage = document.getElementById('questionImage');

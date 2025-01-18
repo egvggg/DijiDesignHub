@@ -1,6 +1,6 @@
 const tests = [
     {
-        question: "Вопрос 1",
+         title: "Какова основная цель создания прототипов?",
         images: [
             {
                 src: "images/prototypeone1.jpg",
@@ -33,7 +33,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 2",
+         title: "Какой уровень детализации прототипа наиболее предпочтителен на ранних стадиях разработки?",
         images: [
             {
                 src: "images/prototypetwo1.jpg",
@@ -66,7 +66,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 3",
+         title: "Какой тип прототипа лучше всего подходит для тестирования взаимодействия пользователей?",
         images: [
             {
                 src: "images/prototypethree1.jpg",
@@ -99,7 +99,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 4",
+         title: "Какой тип прототипа лучше всего подходит для финальной презентации концепции стейкхолдерам?",
         images: [
             {
                 src: "images/prototypefour1.jpg",
@@ -132,7 +132,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 5",
+         title: "Какие преимущества дает использование интерактивных прототипов?",
         images: [
             {
                 src: "images/prototypefive1.jpg",
@@ -165,7 +165,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 6",
+         title: "Какие основные этапы включает в себя процесс создания прототипа?",
         images: [
             {
                 src: "images/prototypesix1.jpg",
@@ -198,7 +198,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 7",
+         title: "В чем заключается основная цель создания низкофидельных прототипов?",
         images: [
             {
                 src: "images/prototypseven1.jpg",
@@ -231,7 +231,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 8",
+         title: "Когда целесообразно использовать высокофидельные интерактивные прототипы?",
         images: [
             {
                 src: "images/prototypeeight1.jpg",
@@ -264,7 +264,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 9",
+         title: "Какой совет по прототипированию можно считать наиболее важным?",
         images: [
             {
                 src: "images/prototypenine1.jpg",
@@ -297,7 +297,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 10",
+        title: "Какой совет по прототипированию подчеркивает важность обратной связи от пользователей?",
         images: [
             {
                 src: "images/prototypeten1.jpg",
@@ -329,7 +329,13 @@ const tests = [
             }
         ]
     }
-]
+]  
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+    }
+}
 
 
     let currentQuestionIndex = 0;
@@ -338,20 +344,20 @@ const tests = [
     const popupMessage = document.getElementById('popup-message');
     const nextButton = document.getElementById('next-button');
     const cancelButton = document.getElementById('cancel-button');
-    const questionTitle = document.getElementById('question-title');
+    const questionTitle = document.getElementById('question-title21');
     
     // Всплывающее окно для прерывания занятия
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
-    const questionTitles = [
-        "Какова основная цель создания прототипов?", 'Какой уровень детализации прототипа наиболее предпочтителен на ранних стадиях разработки?',
-        'Какой тип прототипа лучше всего подходит для тестирования взаимодействия пользователей?', 'Какой тип прототипа лучше всего подходит для финальной презентации концепции стейкхолдерам?',
-        'Какие преимущества дает использование интерактивных прототипов?', 'Какие основные этапы включает в себя процесс создания прототипа?',
-        'В чем заключается основная цель создания низкофидельных прототипов?', 'Когда целесообразно использовать высокофидельные интерактивные прототипы?',
-        'Какой совет по прототипированию можно считать наиболее важным?', 'Какой совет по прототипированию подчеркивает важность обратной связи от пользователей?'
-        ];
+    
+shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
     
     
         let correctAnswers = 0; // Инициализируем счетчик
@@ -360,7 +366,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
         
             // Устанавливаем заголовок в зависимости от текущего вопроса
-            questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+            questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         
             // Очистить контейнер изображений
             imagesContainer.innerHTML = '';

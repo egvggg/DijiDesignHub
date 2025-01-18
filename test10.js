@@ -34,8 +34,8 @@ const tests = [
                 src: "images/badgoodux12.jpg",
                 correct: true,
                 message: "Да! Вопросы уточняют, что именно важно для клиента",
-                footerColor: "#FF4E51",
-                icon: "images/icon1.svg"
+                footerColor: "#4EFF84",
+                icon: "images/icon.svg"
             }
         ]
     },
@@ -54,8 +54,8 @@ const tests = [
                 src: "images/badgoodux12.jpg",
                 correct: true,
                 message: "Да! Вопросы уточняют, что именно важно для клиента",
-                footerColor: "#FF4E51",
-                icon: "images/icon1.svg"
+                footerColor: "#4EFF84",
+                icon: "images/icon.svg"
             }
         ]
     },
@@ -114,8 +114,8 @@ const tests = [
                 src: "images/badgoodux12.jpg",
                 correct: true,
                 message: "Да! Дизайнер абсудил все дитали договора с клиентом",
-                footerColor: "#FF4E51",
-                icon: "images/icon1.svg"
+                footerColor: "#4EFF84",
+                icon: "images/icon.svg"
             }
         ]
     },

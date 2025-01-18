@@ -1,6 +1,7 @@
 
 const tests = [
     {
+        title: "Гротески",
         question: "Вопрос 1",
         questionImage: "images/grotesques.jpg",
         images: [
@@ -35,6 +36,7 @@ const tests = [
         ]
     },
     {
+        title: "Гротески",
         question: "Вопрос 2",
         questionImage: "images/grotesques1.jpg",
         images: [
@@ -69,6 +71,7 @@ const tests = [
         ]
     },
     {
+        title: "Антиквы",
         question: "Вопрос 3",
         questionImage: "images/anciquties.jpg",
         images: [
@@ -103,6 +106,7 @@ const tests = [
         ]
     },
     {
+        title: "Антиквы",
         question: "Вопрос 4",
         questionImage: "images/anciqutiesimg.jpg",
         images: [
@@ -137,6 +141,7 @@ const tests = [
         ]
     },
     {
+        title: "Рукописные",
         question: "Вопрос 5",
         questionImage: "images/handwritten.jpg",
         images: [
@@ -171,6 +176,7 @@ const tests = [
         ]
     },
     {
+        title: "Акцидентные",
         question: "Вопрос 6",
         questionImage: "images/displayfonts.jpg",
         images: [
@@ -205,6 +211,7 @@ const tests = [
         ]
     },
     {
+        title: "Гротески",
         question: "Вопрос 7",
         questionImage: "images/grotesques2.jpg",
         images: [
@@ -240,6 +247,13 @@ const tests = [
     }
 ]
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+    }
+}
+
 
 
 let currentQuestionIndex = 0;
@@ -255,12 +269,13 @@ const confirmPopup = document.getElementById('confirm-popup');
 const cancelLogoutButton = document.getElementById('cancel-logout-button');
 const confirmLogoutButton = document.getElementById('confirm-logout-button');
 
-const questionTitles = [
-    "Гротески", "Гротески",
-    "Антиквы", "Антиквы",
-    "Рукописные", "Акцидентные",
-    "Гротески"
-];
+shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
+
 
 let correctAnswers = 0; // Инициализируем счетчик
 
@@ -268,7 +283,7 @@ let correctAnswers = 0; // Инициализируем счетчик
     const currentQuestion = tests[currentQuestionIndex];
     
     // Устанавливаем заголовок в зависимости от текущего вопроса
-    questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+    questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
 
     const questionImage = document.getElementById('questionImage');
     questionImage.src = currentQuestion.questionImage; // Установка вопроса изображения

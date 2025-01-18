@@ -1,109 +1,363 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фундамент дизайна - Появление контента</title>
+    <title>Responsive Design Example</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
+        * {
+            box-sizing: border-box; /* Учитываем отступы и границы */
         }
 
+        body, html {
+            margin: 0; /* Убираем отступы */
+            padding: 0; 
+            height: 100%; /* Высота страницы 100% */
+            font-family: Arial, sans-serif; /* Шрифт */
+        }
+
+        /* Основной контейнер для всех элементов */
         .container {
-            max-width: 800px;
-            margin: auto;
+            max-width: 1380px; 
+            margin: 0 auto; /* Центрируем контейнер */
+            padding: 0 10px; 
+            position: relative; /* Устанавливаем относительное позиционирование */
+            height: 100%; /* Высота 100% от родителя */
+            background-color: #f0f0f0; /* Цвет фона для контейнера */
         }
 
-        .title, .section__tittle, .subtitle, .text {
-            opacity: 0; /* Начальное состояние: скрыто */
-            transform: translateY(20px); /* Начальная позиция (чуть ниже) */
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Плавный переход */
+        .stripe-container {
+            position: absolute; /* Позиционирование по уровню */
+            top: 0; /* Начало от верхней границы */
+            left: 0; /* Начало от левой границы */
+            right: 0; /* Расширяем до правой границы */
+            bottom: 0; /* Расширяем до нижней границы */
+            display: flex; /* Используем flex для горизонтального расположения */
+            justify-content: space-between; /* Равномерное распределение полос */
+            pointer-events: none; /* Полоски не будут мешать взаимодействию с контентом */
         }
 
-        .visible {
-            opacity: 1; /* Полная видимость */
-            transform: translateY(0); /* Вернуть на место */
+        .stripe {
+            width: 2px; /* Ширина полоски */
+            background-color: rgba(87, 87, 87, 0.15); /* Цвет полоски */
+            margin: 0 10px; /* Отступы между полосами */
         }
 
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
+        main {
+            padding: 20px; /* Отступы для основного контента */
+            z-index: 2; /* Убедитесь, что это над полосками */
+            position: relative; /* Для визуализации в порядке */
         }
 
-        .example__img {
-            max-width: 100%;
-            height: auto;
+        @media (max-width: 768px) {
+            .stripe {
+                margin: 5px 0; /* Уменьшаем отступы между полосами для мобильных */
+                width: 4px; /* Увеличиваем ширину полосок для лучшего отображения */
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h4 class="course__name">Фундамент дизайна</h4>
-    <h1 class="title">Базовые принципы дизайна</h1>
-    <p class="text">
-        У веб-дизайна, также как и у любого другого вида искусства, есть свои правила и принципы. Дизайнеры следуют принципам дизайна для того, чтобы правильно оформить свою композицию (веб-сайт, лендинг, баннер).
-    </p>
-    <p class="text">
-        Всего ключевых принцевов дизайна 8: единство, баланс, акцент, ритм, контраст, пропорции, пространство, иерархия. Разберём каждый из них.
-    </p>
-
-    <section class="section">
-        <h2 class="section__tittle">Единство</h2>
-        <div class="image-container">
-            <img src="images/unity.jpg" alt="" class="section__img">
+    <div class="container">
+        <div class="stripe-container">
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
         </div>
-        <p class="text">
-            Этот принцип подразумевает, что все элементы дизайна должны быть согласованы и работать вместе для создания целостной картины.
-        </p>
-        <h3 class="subtitle">Зачем нужно единство в дизайне сайта</h3>
-        <p class="text">1.<span class="textbold"> Улучшает восприятие.</span> Когда все элементы сайта (цвета, шрифты, графика, навигация) гармонируют друг с другом, пользователю легче воспринимать и взаимодействовать с сайтом.</p>
-        <p class="text">2.<span class="textbold"> Усиливает бренд.</span> Единый стиль помогает сформировать запоминающийся образ бренда и усилить его узнаваемость.</p>
-        <p class="text">3.<span class="textbold"> Повышает профессионализм.</span> Сайт с продуманным единым дизайном выглядит более профессионально и вызывает доверие у посетителей.</p>
 
-        <h3 class="subtitle">Как достичь единства в дизайне сайта</h3>
-        <p class="text">1.<span class="textbold"> Выбрать последовательную цветовую палитру.</span> Используй ограниченный набор основных и дополнительных цветов.</p>
 
-        <p class="text">2.<span class="textbold"> Применять согласованные шрифты.</span> Ограничьcя 2-3 шрифтами, подходящими для вашего бренда.</p>
-        <p class="text">3.<span class="textbold"> Создать единую графику.</span> Используй единый стиль иллюстраций, иконок и других визуальных элементов.</p>
-        <p class="text">4.<span class="textbold"> Разработать последовательную навигацию.</span> Обеспечь логичную структуру меню и сквозную систему навигации по сайту.</p>
-        <p class="text">5.<span class="textbold"> Соблюдать пропорции и сетки.</span> Выдерживай единые принципы верстки и размещения объектов.</p>
+        <main class="main">
+            <section class="home">
+                <a href="#"><img src="images/logo.gif" alt="" class="logo__home"></a>
+                <h1 class="home__title">Изучай дизайн с DijiDesignHub</h1>
+                <h2 class="home__subtitle">Бесплатные курсы дизайна для всех</h2>
+                <div class="button-wrapper">
+                    <a href="#" class="home__link" id="animatedButton">Начать учиться</a>
+                </div>
+            </section>
 
-        <h4 class="example">Пример</h4>
-        <div class="image-container">
-            <img src="images/example__img.jpg" alt="" class="example__img">
-        </div>
-        <h5 class="photo__description">Скриншот сайта <a href="https://www.apple.com/store" class="example__link" target="_blank">Apple</a></h5>
-        <p class="text">Сайт Apple, где все элементы - цвета, шрифты, графика - создают цельный и узнаваемый визуальный стиль.</p>
-    </section>
-</div>
+            <section class="about">
+                <a href="#" class="about__link" id="about">О нас</a>
+                <div class="about__inner">
+                    <img src="images/about__arrow.svg" alt="" class="about__img">
+                    <p class="about__text">DijiDesignHub — это бесплатная платформа с курсами по основам дизайна и UX/UI. Учись веб-дизайну, основам пользовательского опыта и популярным инструментам, независимо от уровня подготовки</p>
+                </div>
+            </section>
 
-<script>
-    // Создаем новый наблюдатель с помощью Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Добавляем класс видимости, когда элемент появляется в области видимости
-                entry.target.classList.add('visible');
-                // Удаляем элемент из списка наблюдения
-                observer.unobserve(entry.target);
-            }
-        });
-    });
+            <section class="courses">
+                <div class="container">
+                    <a href="#" class="courses__link">Курсы</a>
+                <div class="courses__cards">
+                    <div class="card__1">
+                        <h2 class="card__title-1">Фундамент дизайна</h2>
+                        <p class="card__p-1">Освой основы дизайна: теорию цвета, композицию и типографику</p>
+                        <div class="button-wrapper1">
+                            <a href="course1.html" class="card__link" id="animatedButton1">Начать</a>
+                        </div>
+                        <h3 class="subtitle__1">Что входит</h3>  
+                        <ul>  
+                         <li class="card__list-1">Как создать сайт</li>  
+                         <li class="card__list-1">Базовые принципы дизайна</li>  
+                         <li class="card__list-1">Типографика</li>  
+                         <li class="card__list-1">Цвет</li>  
+                         <li class="card__list-1">Композиция</li>  
+                        </ul>  
+                    </div>
 
-    // Выбираем все заголовки и текстовые блоки в контейнере
-    const articles = document.querySelectorAll('.title, .section__tittle, .subtitle, .text, .example, .image-container img, .section__img');
+                    <div class="card__2" id="infoblock">
+                        <div class="visible-content">
+                            <h2 class="card__title-2">UX/UI</h2>
+                            <p class="card__p-2">Научись проектировать удобные, понятные и красивые интерфейсы</p>
+                            <div class="button-wrapper1">
+                            <a href="course2.html" class="card__link" id="animatedButton2">Начать</a>
+                            </div>
+                            <h3 class="subtitle__1">Что входит</h3>
+                            <ul>
+                                <li class="card__list-1">Знакомство с UX/UI</li>
+                                <li class="card__list-1">Базовые принципы дизайна</li>
+                                <h4 class="point">Подготовка</h4>
+                                <li class="card__list-1">UX термины</li>
+                                <li class="card__list-1">UI термины</li>
+                                <li class="card__list-1">Hard и Soft Skills</li>
+                                <li class="card__list-1">Этапы разработки it-продукта</li>
+                            </ul>
+                        </div>
+                    
+                        <div class="additional__content">
+                            <h4 class="point">UX</h4>
+                            <ul>
+                                <li class="card__list-1">Паттерны</li>
+                                <li class="card__list-1">User Flow</li>
+                                <li class="card__list-1">CJM</li>
+                                <li class="card__list-1">Прототипирование</li>
+                                <li class="card__list-1">Психология в UX</li>
+                            </ul>
 
-    // Наблюдаем за каждым элементом
-    articles.forEach(article => {
-        observer.observe(article);
-    });
-</script>
-
+                            <h4 class="point">UI</h4>
+                            <ul>
+                                <li class="card__list-1">Гайдлайны</li>
+                                <li class="card__list-1">Дизайн-концепция</li>
+                                <li class="card__list-1">UI-kit</li>
+                                <li class="card__list-1">Работа с графикой</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>    
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
 
+
+<div class="wrapper"> 
+    <header class="header">
+        <div class="header__container">
+        <div class="header__inner">
+            <a href="" class="logo">
+                <img src="images/logo.gif" alt="logo" class="logo-img">
+            </a>
+
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li class="menu__list-item"><a href="#about" class="menu__list-link menu__list-link-about">О нас</a></li>
+                    <li class="menu__list-item"><a href="#" class="menu__list-link menu__list-link-courses">Курсы</a></li>
+                    <li class="menu__list-item"><a href="#" class="menu__list-link menu__list-link-game">Design Game</a></li>
+                </ul>
+            </nav>
+
+            <a href="" class="arrow">
+                <img src="images/arrow.svg" alt="" class="arrow_img">
+            </a>
+        </div>
+        </div>
+    </header>
+</div> 
+
+    
+
+    <main class="main">
+        <div class="square__l-t"></div>
+        <div class="square__r-t"></div>
+        <p class="text__right-t">/ BY DIJIDESIGNHUB</p>
+        <div class="square__l-b"></div>
+        <p class="text__left-b">2024 /</p>
+        <div class="square__r-b"></div>
+
+        <div class="container">
+        <img src="images/bitcoin-icons_plus-outline.svg" alt="" class="plus__l-t">
+        <img src="images/bitcoin-icons_plus-outline.svg" alt="" class="plus__l-b">
+        <img src="images/bitcoin-icons_plus-outline.svg" alt="" class="plus__r-t">
+        <img src="images/bitcoin-icons_plus-outline.svg" alt="" class="plus__r-b">
+    </div>
+    
+        <section class="home">
+            <div class="container">
+                <a href=""><img src="images/logo.gif" alt="" class="logo__home"></a>
+                <h1 class="home__title">Изучай дизайн с DijiDesignHub</h1>
+                <h2 class="home__subtitle">Бесплатные курсы дизайна для всех</h2>
+                <div class="button-wrapper">
+                    <a href="#" class="home__link" id="animatedButton">Начать учиться</a>
+                </div>
+            </div>
+        </section>
+
+     
+        <section class="about">
+        <div class="container">
+            <a href="#" class="about__link" id="about">О нас</a>
+            <div class="about__inner">
+            <img src="images/about__arrow.svg" alt="" class="about__img">
+            <p class="about__text">DijiDesignHub — это бесплатная платформа с курсами по основам дизайна и UX/UI. Учись веб-дизайну, основам пользовательского опыта и популярным инструментам, независимо от уровня подготовки</p>
+            </div>
+        </div>
+        </section>
+   
+
+     
+        <div class="moving__text">
+            <div class="moving__text-in">
+                <span class="mooving__text-item">DESIGN BASICS</span>
+                <img src="images/Vector.svg" alt="">
+                <span class="mooving__text-item mooving__text-item-border">UX</span>
+                <span class="mooving__text-item no-margin">/UI</span> 
+                <img src="images/Vector.svg" alt="">
+                <span class="mooving__text-item mooving__text-item-border">DESIGN GAME</span>
+        
+                <span class="mooving__text-item">DESIGN BASICS</span>
+                <img src="images/Vector.svg" alt="">
+                <span class="mooving__text-item mooving__text-item-border">UX</span>
+                <span class="mooving__text-item no-margin">/UI</span> 
+                <img src="images/Vector.svg" alt="">
+                <span class="mooving__text-item mooving__text-item-border">DESIGN GAME</span>
+    
+            </div>
+        </div> 
+
+
+        <div class="moving__text-2">
+            <div class="moving__text-in-2">
+                <span class="mooving__text-item-2 mooving__text-item-border-2">DESIGN BASICS</span>
+                <img src="images/Vector.svg" alt="">
+                <span class="mooving__text-item-2">UX</span>
+                <span class="mooving__text-item-2 no-margin mooving__text-item-border-2">/UI</span> 
+                <img src="images/Vector.svg" alt="">
+                <span class="mooving__text-item">DESIGN GAME</span>
+
+                <span class="mooving__text-item-2 mooving__text-item-border-2">DESIGN BASICS</span>
+                <img src="images/Vector.svg" alt="">
+                <span class="mooving__text-item-2">UX</span>
+                <span class="mooving__text-item-2 no-margin mooving__text-item-border-2">/UI</span> 
+                <img src="images/Vector.svg" alt="">
+                <span class="mooving__text-item">DESIGN GAME</span>
+        
+               
+            </div>
+        </div>
+
+        <section class="courses">
+            <div class="container">
+                <a href="#" class="courses__link">Курсы</a>
+            <div class="courses__cards">
+                <div class="card__1">
+                    <h2 class="card__title-1">Фундамент дизайна</h2>
+                    <p class="card__p-1">Освой основы дизайна: теорию цвета, композицию и типографику</p>
+                    <div class="button-wrapper1">
+                        <a href="course1.html" class="card__link" id="animatedButton1">Начать</a>
+                    </div>
+                    <h3 class="subtitle__1">Что входит</h3>  
+                    <ul>  
+                     <li class="card__list-1">Как создать сайт</li>  
+                     <li class="card__list-1">Базовые принципы дизайна</li>  
+                     <li class="card__list-1">Типографика</li>  
+                     <li class="card__list-1">Цвет</li>  
+                     <li class="card__list-1">Композиция</li>  
+                    </ul>  
+                </div>
+
+                <div class="card__2" id="infoblock">
+                    <div class="visible-content">
+                        <h2 class="card__title-2">UX/UI</h2>
+                        <p class="card__p-2">Научись проектировать удобные, понятные и красивые интерфейсы</p>
+                        <div class="button-wrapper1">
+                        <a href="course2.html" class="card__link" id="animatedButton2">Начать</a>
+                        </div>
+                        <h3 class="subtitle__1">Что входит</h3>
+                        <ul>
+                            <li class="card__list-1">Знакомство с UX/UI</li>
+                            <li class="card__list-1">Базовые принципы дизайна</li>
+                            <h4 class="point">Подготовка</h4>
+                            <li class="card__list-1">UX термины</li>
+                            <li class="card__list-1">UI термины</li>
+                            <li class="card__list-1">Hard и Soft Skills</li>
+                            <li class="card__list-1">Этапы разработки it-продукта</li>
+                        </ul>
+                    </div>
+                
+                    <div class="additional__content">
+                        <h4 class="point">UX</h4>
+                        <ul>
+                            <li class="card__list-1">Паттерны</li>
+                            <li class="card__list-1">User Flow</li>
+                            <li class="card__list-1">CJM</li>
+                            <li class="card__list-1">Прототипирование</li>
+                            <li class="card__list-1">Психология в UX</li>
+                        </ul>
+
+                        <h4 class="point">UI</h4>
+                        <ul>
+                            <li class="card__list-1">Гайдлайны</li>
+                            <li class="card__list-1">Дизайн-концепция</li>
+                            <li class="card__list-1">UI-kit</li>
+                            <li class="card__list-1">Работа с графикой</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+            </div>
+        </section>
+
+        <section class="design__game">
+            <div class="container">
+                <img src="images/bitcoin-icons_plus-outline.svg" alt="" class="game__img-1">
+                <img src="images/bitcoin-icons_plus-outline.svg" alt="" class="game__img-2">
+                <img src="images/bitcoin-icons_plus-outline.svg" alt="" class="game__img-3">
+                <img src="images/bitcoin-icons_plus-outline.svg" alt="" class="game__img-4">
+                <div class="game__inner">
+                <a href="" class="game__link">Design Game</a>
+                <h1 class="game_title">Design Game</h1>
+                <h2 class="game__subtitle">Сыграйте в эту небольшую игру и проверь  наколько хорошо ты знаешь UX и UI-дизайн</h2>
+                <div class="button-wrapper">
+                <a  href="http://localhost:3000" class="game__button" id="animatedButton3" target="_blank">Начать</a>
+                </div>
+                </div>
+            </div>
+        </section>         
+    </main>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+        <img src="images/logo.gif" alt="" class="footer__logo">
+        <ul class="footer__list-1">
+            <li><a href="" class="footer__item">О нас</a></li>
+            <li><a href="" class="footer__item">Курсы</a></li>
+            <li><a href="" class="footer__item">Design Game</a></li>
+        </ul>
+        <ul class="footer__list-2">
+            <li><a href="" class="footer__item">Instagram</a></li>
+            <li><a href="" class="footer__item">Tik Tok</a></li>
+            <li><a href="" class="footer__item">Facebook</a></li>
+        </ul>
+
+        </div>
+    </div>
+    </footer>
+</div>
+
+</div>

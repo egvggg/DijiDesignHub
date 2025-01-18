@@ -1,6 +1,6 @@
 const tests = [
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxuiterm1.jpg",
         images: [
             {
@@ -34,7 +34,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxuiterm2.jpg",
         images: [
             {
@@ -68,7 +68,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxuiterm3.jpg",
         images: [
             {
@@ -102,7 +102,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxuiterm4.jpg",
         images: [
             {
@@ -136,7 +136,7 @@ const tests = [
         ]
     },
     {
-        question: "Какую болевую точку решает этот сайт?",
+        title: "Какую болевую точку решает этот сайт?",
         questionImage: "images/uxuiterm5.jpg",
         images: [
             {
@@ -170,7 +170,7 @@ const tests = [
         ]
     },
     {
-        question: "Какую болевую точку решает этот сайт?",
+        title: "Какую болевую точку решает этот сайт?",
         questionImage: "images/uxuiterm6.jpg",
         images: [
             {
@@ -204,7 +204,7 @@ const tests = [
         ]
     },
     {
-        question: "Основная цель а/б тестирования?",
+        title: "Основная цель а/б тестирования?",
         images: [
             {
                 src: "images/testing1.jpg",
@@ -237,7 +237,7 @@ const tests = [
         ]
 },
 {
-    question: "Что позволяет обратная связь, помимо сбора мнений посетителей?",
+    title: "Что позволяет обратная связь, помимо сбора мнений посетителей?",
     images: [
         {
             src: "images/testing5.jpg",
@@ -270,7 +270,7 @@ const tests = [
     ]
 },
 {
-    question: "Основная цель обратной связи на сайте?",
+    title: "Основная цель обратной связи на сайте?",
     images: [
         {
             src: "images/testing9.jpg",
@@ -303,7 +303,7 @@ const tests = [
     ]
 },
 {
-    question: "Основная цель использования UX-персон?",
+    title: "Основная цель использования UX-персон?",
     images: [
         {
             src: "images/testing13.jpg",
@@ -336,7 +336,7 @@ const tests = [
     ]
 },
 {
-    question: "Что такое интерфейс в контексте дизайна?",
+    title: "Что такое интерфейс в контексте дизайна?",
     images: [
         {
             src: "images/testing17.jpg",
@@ -369,20 +369,32 @@ const tests = [
     ]
 }]
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+    }
+}
+
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const nextButton = document.getElementById('next-button');
     const cancelButton = document.getElementById('cancel-button');
-    const questionTitle = document.getElementById('question-title');
+    const questionTitle = document.getElementById('question-title21');
     
     // Всплывающее окно для прерывания занятия
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
-    
+    shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
     
         let correctAnswers = 0; // Инициализируем счетчик
     
@@ -390,7 +402,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
 
     // Устанавливаем заголовок в зависимости от текущего вопроса
-    questionTitle.textContent = currentQuestion.question || "Вопрос не найден";
+    questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
 
     // Устанавливаем изображение вопроса
     const questionImage = document.getElementById('questionImage');

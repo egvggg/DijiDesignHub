@@ -1,6 +1,6 @@
 const tests = [
     {
-        question: "Вопрос 1",
+        title: "Что такое дизайн-концепция?",
         images: [
             {
                 src: "images/designconceptone1.jpg",
@@ -33,7 +33,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 2",
+        title: "Что является ключевым элементом дизайн-концепции?",
         images: [
             {
                 src: "images/designconcepttwo1.jpg",
@@ -66,7 +66,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 3",
+        title: "Как дизайн-концепция способствует согласованной работе команды?",
         images: [
             {
                 src: "images/designconceptthree1.jpg",
@@ -99,7 +99,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 4",
+        title: "Какие ключевые визуальные элементы определяет дизайн-концепция?",
         images: [
             {
                 src: "images/designconceptfour1.jpg",
@@ -132,7 +132,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 5",
+        title: "Когда можно обойтись без детальной дизайн-концепции?",
         images: [
             {
                 src: "images/designconceptfive1.jpg",
@@ -165,7 +165,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 6",
+        title: "Что такое «мудборд» в процессе разработки дизайна?",
         images: [
             {
                 src: "images/designconceptsix1.jpg",
@@ -198,7 +198,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 7",
+        title: "Какой метод часто используется для сбора идей и вдохновения в дизайне?",
         images: [
             {
                 src: "images/designconceptseven1.jpg",
@@ -231,7 +231,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 8",
+        title: "Какой из следующих факторов не следует учитывать при проработке концепции?",
         images: [
             {
                 src: "images/designconcepteight1.jpg",
@@ -264,7 +264,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 9",
+        title: "Какой вид обратной связи наиболее ценен после презентации концепции?",
         images: [
             {
                 src: "images/designconceptnine1.jpg",
@@ -297,26 +297,32 @@ const tests = [
         ]
     }]
 
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+        }
+    }
+
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const nextButton = document.getElementById('next-button');
     const cancelButton = document.getElementById('cancel-button');
-    const questionTitle = document.getElementById('question-title');
+    const questionTitle = document.getElementById('question-title21');
     
     // Всплывающее окно для прерывания занятия
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
-    const questionTitles = [
-        'Что такое дизайн-концепция?', 'Что является ключевым элементом дизайн-концепции?',
-        'Как дизайн-концепция способствует согласованной работе команды?', 'Какие ключевые визуальные элементы определяет дизайн-концепция?',
-        'Когда можно обойтись без детальной дизайн-концепции?', 'Что такое «мудборд» в процессе разработки дизайна?',
-        'Какой метод часто используется для сбора идей и вдохновения в дизайне?', 'Какой из следующих факторов не следует учитывать при проработке концепции?',
-        'Какой вид обратной связи наиболее ценен после презентации концепции?'
-        ];
+    shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
     
     
         let correctAnswers = 0; // Инициализируем счетчик
@@ -325,7 +331,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
         
             // Устанавливаем заголовок в зависимости от текущего вопроса
-            questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+            questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         
             // Очистить контейнер изображений
             imagesContainer.innerHTML = '';

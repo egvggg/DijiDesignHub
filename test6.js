@@ -1,6 +1,7 @@
 const tests = [
     {
-        question: "Что это?",
+        title: "Что это?",
+      
         questionImage: "images/uxui.jpg",
         images: [
             {
@@ -20,7 +21,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxui3.jpg",
         images: [
             {
@@ -40,7 +41,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxui4.jpg",
         images: [
             {
@@ -60,7 +61,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxui5.jpg",
         images: [
             {
@@ -80,7 +81,7 @@ const tests = [
         ]
     }, 
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxui7.jpg",
         images: [
             {
@@ -100,7 +101,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxui8.jpg",
         images: [
             {
@@ -120,7 +121,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxui9.jpg",
         images: [
             {
@@ -140,7 +141,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxui10.jpg",
         images: [
             {
@@ -160,7 +161,7 @@ const tests = [
         ]
     },
     {
-        question: "Что это?",
+        title: "Что это?",
         questionImage: "images/uxui13.jpg",
         images: [
             {
@@ -180,6 +181,13 @@ const tests = [
         ]
     } ]
 
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+        }
+    }
+
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
     const popup = document.getElementById('popup');
@@ -193,6 +201,12 @@ const tests = [
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
+    shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
     
     
         let correctAnswers = 0; // Инициализируем счетчик
@@ -201,7 +215,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
 
     // Устанавливаем заголовок в зависимости от текущего вопроса
-    questionTitle.textContent = currentQuestion.question || "Вопрос не найден";
+    questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
 
     // Устанавливаем изображение вопроса
     const questionImage = document.getElementById('questionImage');

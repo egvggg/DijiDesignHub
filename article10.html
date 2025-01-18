@@ -15,14 +15,57 @@
         <div class="progressbar" id="progressBar"></div>
     </div>
     <div class="container"> 
+        <nav class="table-of-contents">
+            <ul>
+                <li><a href="#unity" class="points">Интерфейс</a></li>
+                <ul class="unity-subsections hidden"></ul>
+                <li><a href="#balance" class="points">Варфрейм</a></li>
+                <li><a href="#accent" class="points">Прототип</a></li>
+                <li><a href="#rhythm" class="points">Информационная архитектура</a></li>
+                <li><a href="#proportion" class="points">Болевые точки</a></li>
+                <li><a href="#hierarchy" class="points">Айтрекинг</a></li>
+                <li><a href="#freeplace" class="points">A/B-тестирование</a></li>
+                <li><a href="#tasks" class="points">Бета-запуск</a></li>
+                <li><a href="#term" class="points">Шкала загрузки</a></li>
+                <li><a href="#term2" class="points">Пагинация и бесконечный скролл</a></li>
+                <li><a href="#term3" class="points">Обратная связь</a></li>
+                <li><a href="#term4" class="points">Доступность</a></li>
+                <li><a href="#term5" class="points">Персоны</a></li>
+                <li><a href="#term6" class="points">Примеры заданий для практики</a></li>
+                <ul class="term6-subsections hidden">
+                    <div class="contant__line">
+                        <svg class="line" width="2" height="34" viewBox="0 0 2 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1V33" stroke="#698AFF" stroke-linecap="round" />
+                          </svg>  
+                    <li><a href="#task1" class="subpoints">Создание персонажей</a></li>
+                </div>
+                    <div class="contant__line">
+                        <svg class="line" width="2" height="34" viewBox="0 0 2 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1V33" stroke="#698AFF" stroke-linecap="round" />
+                          </svg>
+                    <li><a href="#task2" class="subpoints">Пагинация и бесконечный скролл</a></li>
+                </div>
+                    <div class="contant__line">
+                        <svg class="line" width="2" height="34" viewBox="0 0 2 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1V33" stroke="#698AFF" stroke-linecap="round" />
+                          </svg>
+                    <li><a href="#task3" class="subpoints">Болевые точки</a></li>
+                </div>
+                </ul>
+
+            </ul>
+        </nav>
+
+        <main class="main-content">
         <h4 class="course__name">UX/UI дизайн</h4>
             <h1 class="title">UX термины</h1>
             <p class="text">UX-дизайн — это комплексный подход, который опирается на потребности и опыт пользователей, чтобы создавать продукты, которыми люди действительно хотят и могут пользоваться.</p>
+            <section id="unity">
             <h2 class="title1">Интерфейс (Interface)</h2>
             <p class="text">
                 Интерфейс — это визуальное представление продукта, с которым взаимодействует пользователь. Другими словами, интерфейс — это все элементы, с помощью которых пользователь взаимодействует с продуктом.
             </p>
-            <h3 class="subtitle">Хороший интерфейс:</h3>
+            <h3 class="subtitle" id="interface">Хороший интерфейс:</h3>
             <p class="text">- Соответствует ожиданиям и потребностям пользователей
                 <br>- Помогает им эффективно достигать своих целей
                 <br>- Имеет логичную структуру и навигацию
@@ -31,8 +74,11 @@
             <p class="text">Интерфейсом можно назвать все что угодно. Например, дверная ручка — интерфейс для взаимодействия с дверью, кнопка — для взаимодействия с функцией устройства или приложения, язык — для взаимодействия между людьми.</p>
             <div class="image-container">
             <img src="images/interface1.jpg" alt="интерфейс" class="ux__terms"></div>
-            <p class="text2">Сайт — интерфейс взаимодействия с компьютером</p>
-
+            <div class="image-container">
+            <p class="subtext">Сайт — интерфейс взаимодействия с компьютером</p>
+            </div>
+            </section>
+            <section id="balance">
             <h2 class="title1">Варфрейм (Wireframe)</h2>
             <p class="text">
                 Варфрейм — это простой, схематичный макет интерфейса, который показывает основную структуру и расположение элементов на странице или экране. Черно-белый или монохромный набросок будущего пользовательского интерфейса.
@@ -44,19 +90,22 @@
                 <br>- Коммуникации между дизайнерами, разработчиками и менеджерами</p>
             <div class="image-container">
             <img src="images/Wireframe.jpg" alt="Варфрейм" class="ux__terms">
-            <p class="text2">Скриншот сайта <a href="https://mockflow.com/" class="img__link" target="_blank">  MockFlow</a></p></div>
-
+            <p class="subtext">Скриншот сайта <a href="https://mockflow.com/" class="example__link" target="_blank">  MockFlow</a></p></div>
+            </section>
+            <section id="accent">
             <h2 class="title1">Прототип (Prototype)</h2>
             <p class="text">
                 Прототип — интерактивная модель будущего продукта, которая позволяет экспериментировать, тестировать идеи и совершенствовать пользовательский опыт еще до финальной реализации.
             </p>
-            <h3 class="subtitle">Прототипы используются на разных этапах разработки продукта:</h3>
+            <h3 class="subtitle">На каких этапах используются прототипы:</h3>
             <p class="text">- На ранних этапах — для быстрого тестирования концепций
                 <br>- На более поздних этапах — для детальной проверки интерфейса и взаимодействий</p>
                 <div class="image-container">
             <img src="images/Prototype.jpg" alt="Прототип" class="ux__terms">
-            <p class="text2">Изображение: Mohamed MonGe / <a href="https://www.behance.net/gallery/212253509/AI-Language-Learning-App?tracking_source=search_projects|Prototype&l=50/" class="img__link" target="_blank">  Behance</a></p>
+            <p class="subtext">Изображение: Mohamed MonGe / <a href="https://www.behance.net/gallery/212253509/AI-Language-Learning-App?tracking_source=search_projects|Prototype&l=50/" class="example__link" target="_blank">  Behance</a></p>
             </div>
+            </section>
+            <section id="rhythm">
             <h2 class="title1">Информационная архитектура (Information Architecture, IA, ИА)</h2>
             <p class="text">
                 Информационная архитектура — структура и организация информации в продукте или сервисе для облегчения навигации и поиска.
@@ -64,8 +113,9 @@
             </p>
             <div class="image-container">
             <img src="images/IA.jpg" alt="Информационная архитектура" class="ux__terms">
-            <p class="text2">Изображение: Vinayag4u ❤ / <a href="https://www.behance.net/gallery/66128595/what-is-information-architecture" class="img__link" target="_blank">  Behance</a></p></div>
-
+            <p class="subtext">Изображение: Vinayag4u ❤ / <a href="https://www.behance.net/gallery/66128595/what-is-information-architecture" class="example__link" target="_blank">  Behance</a></p></div>
+            </section>
+            <section id="proportion">
             <h2 class="title1">Болевые точки, или боль пользователя (Pain Point)</h2>
             <p class="text">
                 Боль пользователя — проблемы, трудности которые испытывают пользователи при взаимодействии с продуктом или услугой. Те моменты, которые вызывают у пользователей неудобство, раздражение или разочарование.
@@ -73,26 +123,28 @@
             <p class="text">Выявление и устранение болевых точек — важная задача в UX-дизайне. Это помогает сделать продукт более удобным, интуитивным и "безболезненным" для пользователей.</p>
             <div class="image-container">
             <img src="images/simply.jpg" alt="Simply" class="ux__terms">
-            <p class="text2">Скриншот сайта <a href="https://www.simply.cards/" class="img__link" target="_blank">  Simply</a></p></div>
+            <p class="subtext">Скриншот сайта <a href="https://www.simply.cards/" class="example__link" target="_blank">  Simply</a></p></div>
             <p class="text">Например, в интернет-банке болевой точкой может быть сложная навигация, из-за которой пользователям трудно находить нужные функции. </p>
             <p class="text">Одним из первопроходцев в решении проблемы сложной навигации в банковских приложениях был банк Simply. </p>
             <p class="text">Simply отказался от традиционного "банковского" дизайна с множеством меню и опций.
                 Вместо этого они создали очень простой и понятный интерфейс с акцентом на основные задачи пользователей.</p>
-            
+            </section>
+            <section id="hierarchy">
             <h2 class="title1">Айтрекинг (Eye-tracking)</h2>
             <p class="text">
                 Айтрекинг — технология, которая позволяет отслеживать движения и фокус взгляда человека.
 Айтрекинг помогает понять, на что именно смотрит человек, когда он взаимодействует с интерфейсом, изображением или любым другим объектом.
             </p>
-            <h3 class="subtitle">Айтрекинг используется в различных областях, например:</h3>
+            <h3 class="subtitle">Где используется айтрекинг:</h3>
             <p class="text">- UX-дизайн — для оценки юзабилити и эффективности интерфейсов
                 <br>- Маркетинг — для анализа эффективности рекламных и информационных материалов
                 <br>- Психология и нейробиология — для исследования когнитивных процессов.
                 <br>- Обучение и тренинги — для оценки вовлеченности и внимания</p>
             <div class="image-container">
             <img src="images/Eye-tracking.jpg" alt="Eye-tracking" class="ux__terms">
-            <p class="text2">Изображение: <a href="https://traff.ink/seo/ispolzovanie-teplovyh-kart/" class="img__link" target="_blank"> Traffink</a></p></div>
-
+            <p class="subtext">Изображение: <a href="https://traff.ink/seo/ispolzovanie-teplovyh-kart/" class="example__link" target="_blank"> Traffink</a></p></div>
+            </section>
+            <section id="freeplace">
             <h2 class="title1">A/B-тестирование</h2>
             <p class="text">
                 A/B-тестирование — метод тестирования различных вариантов веб-страницы, мобильного приложения или другого продукта с целью определения, какой из них работает лучше. A/B-тестирование —  это сравнение двух версий одного и того же элемента, чтобы понять, какой из них приводит к лучшим результатам.
@@ -102,47 +154,54 @@
             <p class="text2">Версия А</p>
             <img src="images/bversion.jpg" alt="Версия Б" class="ux__terms">
             <p class="text2">Версия Б</p></div>
-
+            </section>
+            <section id="tasks">
             <h2 class="title1">Бета-запуск</h2>
             <p class="text">
                 Бета-запуск — то промежуточный этап между разработкой и полноценным релизом продукта. Он позволяет командам получить ценную обратную связь от реальных пользователей, отладить и улучшить свое предложение, прежде чем представить его широкой аудитории.
             </p>
-
+        </section>
+             <section id="term">
             <h2 class="title1 ">Шкала загрузки, прогресс-бар<br>(Progress bar)</h2>
             <p class="text">
                 Прогресс-бар — элемент интерфейса, который показывает пользователю загрузку какого-либо процесса.
             </p>
             <div class="image-container">
             <img src="images/progressbar.jpg" alt="Прогресс-бар" class="ux__terms">
-            <p class="text2">Скриншот сайта <a href="http://nlf.geex-arts.com/" class="img__link" target="_blank">  Next Level Fairs </a></p></div>
-
+            <p class="subtext">Скриншот сайта <a href="http://nlf.geex-arts.com/" class="example__link" target="_blank">  Next Level Fairs </a></p></div>
+            </section>
+            
+            <section id="term2">
             <h2 class="title1 ">Пагинация (Pagination) и прокрутка, бесконечный скролл (Infinite scroll)</h2>
             <p class="text">
                 Пагинация и прокрутка — два разных подхода к отображению контента на веб-странице.
-            </p>
+            </p></section>
             <h3 class="subtitle">Пагинация (Pagination) </h3>
             <p class="text">Пагинация — это метод разбивки контента на страницы, которые пользователи могут просматривать по очереди. Это означает, что, вместо того чтобы загружать всю информацию сразу, данные разбиваются на отдельные части, каждая из которых доступна на своей странице.</p>
             <div class="image-container">
             <img src="images/Pagination.jpg" alt="Пагинация" class="ux__terms">
-            <p class="text2">Скриншот сайта <a href="https://www.adidas.com/us?gad_source=1&gclid=Cj0KCQiAuou6BhDhARIsAIfgrn6WAnzk8gWJ_A55_tDmzkNMizc-vDqQWWfHzibhVictK-jl11SLEU0aAjA1EALw_wcB" class="img__link" target="_blank">  Adidas </a></p>
+            <p class="subtext">Скриншот сайта <a href="https://www.adidas.com/us?gad_source=1&gclid=Cj0KCQiAuou6BhDhARIsAIfgrn6WAnzk8gWJ_A55_tDmzkNMizc-vDqQWWfHzibhVictK-jl11SLEU0aAjA1EALw_wcB" class="example__link" target="_blank">  Adidas </a></p>
             </div>
             <p class="text">Списки продуктов, разделенные на страницы, позволяют пользователям легко пролистывать и находить нужные товары.</p>
             <h3 class="subtitle">Бесконечный скролл (Infinite Scroll)</h3>
             <p class="text">Бесконечный скролл — это технология, которая позволяет пользователям прокручивать вниз по странице, и по мере скроллинга новые элементы автоматически загружаются и добавляются в представление. Это создает иллюзию «бесконечного» контента.</p>
             <div class="image-container">
             <img src="images/InfiniteScroll.jpg" alt="Бесконечный скролл" class="ux__terms">
-            <p class="text2">Скриншот сайта <a href="https://www.wayfair.com/" class="img__link" target="_blank">  Wayfair</a></p></div>
+            <p class="subtext">Скриншот сайта <a href="https://www.wayfair.com/" class="example__link" target="_blank">  Wayfair</a></p></div>
             <p class="text">Интернет-магазины с большим ассортиментом товаров часто используют бесконечный скролл, чтобы упростить навигацию и поиск продуктов.</p>
-
+            </section>
+            <section id="term3">
             <h2 class="title1 ">Обратная связь (Feedback)</h2>
             <p class="text">
                 Обратная связь — свойство системы, когда она даёт какой-либо ответ на действия пользователя.
             </p>
             <div class="image-container">
             <img src="images/Feedback.jpg" alt="Обратная связь" class="ux__terms">
-            <p class="text2">Скриншот сайта <a href="https://www.luckyfolks.fr/" class="img__link" target="_blank"> Lucky Folks</a></p></div>
+            <p class="subtext">Скриншот сайта <a href="https://www.luckyfolks.fr/" class="example__link" target="_blank"> Lucky Folks</a></p></div>
             <p class="text">При наведении курсора на кнопку срабатывает анимация, чтобы показать пользователю, что на неё можно кликнуть.</p>
-
+            </section>
+            
+            <section id="term4">
             <h2 class="title1 ">Доступность (Accessibility)</h2>
             <p class="text">
                 Доступность — войство дизайна интерфейса, которое определяет, насколько удобен и понятен ваш продукт для использования различными людьми, включая тех, у кого есть физические, сенсорные или когнитивные ограничения.
@@ -150,7 +209,8 @@
             <p class="text">Например, незрячий пользователь не может самостоятельно просматривать картинки на сайте. В таком случае для обеспечения доступности необходимо добавить текстовые описания изображений, которые программа экранного чтения сможет озвучить для этого пользователя.</p>
             <div class="image-container">
             <img src="images/Accessibility.jpg" alt="Доступность" class="ux__terms"></div>
-
+            </section>
+            <section id="term5">
             <h2 class="title1 ">Персоны, персонажи (User personas)</h2>
             <p class="text">
                 Персоны — обобщенные портреты типичных пользователей твоего продукта или услуги. Они помогают лучше понять, кто твои целевые клиенты и какие у них потребности.
@@ -158,15 +218,18 @@
             <p class="text">Персоны  —  это не реальные люди, а скорее вымышленные архетипы, основанные на исследованиях, опросах и наблюдениях за реальными пользователями.</p>
             <div class="image-container">
             <img src="images/Userpersonas.jpg" alt="Доступность" class="ux__terms">
-            <p class="text2">Изображение: Sofia Afanaseva / <a href="https://www.behance.net/gallery/212250379/Speech-Craft-Language-Learning-App-concept?tracking_source=search_projects&l=57" class="img__link" target="_blank">  Behance</a></p>
+            <p class="subtext">Изображение: Sofia Afanaseva / <a href="https://www.behance.net/gallery/212250379/Speech-Craft-Language-Learning-App-concept?tracking_source=search_projects&l=57" class="example__link" target="_blank">  Behance</a></p>
 </div>
+</section>
+            <section id="term6"></section>
             <h2 class="title1">Примеры заданий для практики</h2>
-            <h3 class="subtitle">Создание персонажей</h3>
+            <h3 class="subtitle" id="task1">Создание персонажей</h3>
             <p class="text">Разработай 2-3 персонажа для вымышленного продукта. Определи их возраст, пол, профессиональную деятельность, интересы и цели. Напиши сценарии, в которых твои персонажи используют продукт, и опиши, с какими проблемами они могут столкнуться.</p>
-            <h3 class="subtitle">Пагинация и бесконечный скролл</h3>
+            <h3 class="subtitle" id="task2">Пагинация и бесконечный скролл</h3>
             <p class="text">Создай прототип страницы с обеими системами навигации. Отобрази визуально, как пользователи будут взаимодействовать с контентом.  Запиши, когда лучше использовать каждую из систем.</p>
-            <h3 class="subtitle"> Болевые точки</h3>
+            <h3 class="subtitle" id="task3"> Болевые точки</h3>
             <p class="text">Выбери два конкурирующих продукта в одной области (например, приложения для доставки еды). Проанализируй их интерфейсы и выдели 3-4 болевых точки у каждого. Обсуди, как их можно улучшить.</p>
+            </section>
 
             <section class="section">
                 <div class="section__inner">
@@ -174,6 +237,7 @@
                     <a href="test8.html" class="article__link">Далее</a>
                 </div>
             </section>
+        </main>
 
             <script>
                 // Создаем новый наблюдатель с помощью Intersection Observer
@@ -195,6 +259,101 @@
                 articles.forEach(article => {
                     observer.observe(article);
                 });
+
+                document.addEventListener("DOMContentLoaded", function () {
+    const unitySubsections = document.querySelector('.unity-subsections');
+    const balanceSubsections = document.querySelector('.balance-subsections');
+    const accentSubsections = document.querySelector('.accent-subsections');
+    const rhythmSubsections = document.querySelector('.rhythm-subsections');
+    const proportionSubsections = document.querySelector('.proportion-subsections');
+    const hierarchySubsections = document.querySelector('.hierarchy-subsections');
+    const freeplaceSubsections = document.querySelector('.freeplace-subsections');
+    const tasksSubsections = document.querySelector('.tasks-subsections');
+    const termSubsections = document.querySelector('.term-subsections');
+    const term2Subsections = document.querySelector('.term2-subsections');
+    const term3Subsections = document.querySelector('.term3-subsections');
+    const term4Subsections = document.querySelector('.term4-subsections');
+    const term5Subsections = document.querySelector('.term5-subsections');
+    const term6Subsections = document.querySelector('.term6-subsections');
+
+    // Навигационные ссылки
+    const links = {
+        unity: document.querySelector('a[href="#unity"]'),
+        balance: document.querySelector('a[href="#balance"]'),
+        accent: document.querySelector('a[href="#accent"]'),
+        rhythm: document.querySelector('a[href="#rhythm"]'),
+        proportion: document.querySelector('a[href="#proportion"]'),
+        hierarchy: document.querySelector('a[href="#hierarchy"]'),
+        freeplace: document.querySelector('a[href="#freeplace"]'),
+        tasks: document.querySelector('a[href="#tasks"]'),
+        term: document.querySelector('a[href="#term"]'),
+        term2: document.querySelector('a[href="#term2"]'),
+        term3: document.querySelector('a[href="#term3"]'),
+        term4: document.querySelector('a[href="#term4"]'),
+        term5: document.querySelector('a[href="#term5"]'),
+        term6: document.querySelector('a[href="#term6"]'),
+    };
+
+    // Функция для отслеживания позиции прокрутки
+    function onScroll() {
+        const sections = {
+            unity: document.getElementById('unity'),
+            balance: document.getElementById('balance'),
+            accent: document.getElementById('accent'),
+            rhythm: document.getElementById('rhythm'),
+            proportion: document.getElementById('proportion'),
+            hierarchy: document.getElementById('hierarchy'),
+            freeplace: document.getElementById('freeplace'),
+            tasks: document.getElementById('tasks'),
+            term: document.getElementById('term'),
+            term2: document.getElementById('term2'),
+            term3: document.getElementById('term3'),
+            term4: document.getElementById('term4'),
+            term5: document.getElementById('term5'),
+            term6: document.getElementById('term6'),
+        };
+
+        // Обходим все секции и проверяем видимость
+        for (const [key, section] of Object.entries(sections)) {
+            const offsetTop = section.getBoundingClientRect();
+            const link = links[key];
+
+            if (offsetTop.top < window.innerHeight && offsetTop.bottom > 0) {
+                // Секция видима
+                if (key === 'unity') {
+                    unitySubsections.classList.remove('hidden');
+                    link.classList.add('active');
+                } else {
+                    const subsection = document.querySelector(`.${key}-subsections`);
+                    if (subsection) {
+                        subsection.classList.remove('hidden');
+                    }
+                    link.classList.add('active');
+                }
+            } else {
+                // Секция не видима
+                if (key === 'unity') {
+                    unitySubsections.classList.add('hidden');
+                    link.classList.remove('active');
+                } else {
+
+                    const subsection = document.querySelector(`.${key}-subsections`);
+                    if (subsection) {
+                        subsection.classList.add('hidden');
+                    }
+                    link.classList.remove('active');
+                }
+            }
+        }
+    }
+
+    
+
+    // Подписка на событие прокрутки
+    window.addEventListener('scroll', onScroll);
+
+    
+});
             </script>
     
 </body>

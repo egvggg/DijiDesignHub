@@ -1,0 +1,16 @@
+.hidden {
+    display: none; /* Скрывает элемент */
+}
+.visible {
+    display: block; /* Отображает элемент */
+}
+.subsection {
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Анимация */
+    transform: translateY(-10px); /* Перемещаем в начало */
+    opacity: 0; /* Начальное состояние: невидимо */
+}
+.unity-subsections.visible .subsection, .balance-subsections.visible .subsection {
+
+    transform: translateY(0); /* Когда появляется */
+    opacity: 1; /* Становится видимым */
+}

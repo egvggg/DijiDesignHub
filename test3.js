@@ -1,5 +1,6 @@
 const tests = [
     {
+        title: "Что нужно здесь исправить",
         question: "Вопрос 1",
         questionImage: "images/correct1.jpg",
         images: [
@@ -34,6 +35,7 @@ const tests = [
         ]
     },
     {
+        title: "Что нужно здесь исправить",
         question: "Вопрос 2",
         questionImage: "images/correct2.jpg",
         images: [
@@ -68,6 +70,7 @@ const tests = [
         ]
     },
     {
+        title: "Что нужно здесь исправить",
         question: "Вопрос 3",
         questionImage: "images/correct3.jpg",
         images: [
@@ -102,6 +105,7 @@ const tests = [
         ]
     },
     {
+        title: "Что нужно здесь исправить",
         question: "Вопрос 4",
         questionImage: "images/correct4.jpg",
         images: [
@@ -136,6 +140,7 @@ const tests = [
         ]
     },
     {
+        title: "Что нужно здесь исправить",
         question: "Вопрос 5",
         questionImage: "images/correct5.jpg",
         images: [
@@ -171,6 +176,13 @@ const tests = [
     }
 ]
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+    }
+}
+
     let currentQuestionIndex = 0;
 const imagesContainer = document.getElementById('imagesContainer');
 const popup = document.getElementById('popup');
@@ -184,11 +196,13 @@ const confirmPopup = document.getElementById('confirm-popup');
 const cancelLogoutButton = document.getElementById('cancel-logout-button');
 const confirmLogoutButton = document.getElementById('confirm-logout-button');
 
-const questionTitles = [
-    "Что нужно здесь исправить ", "Что нужно здесь исправить ",
-    "Что нужно здесь исправить ", "Что нужно здесь исправить ",
-    "Что нужно здесь исправить "
-];
+
+shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
 
 
     let correctAnswers = 0; // Инициализируем счетчик
@@ -197,7 +211,7 @@ const questionTitles = [
         const currentQuestion = tests[currentQuestionIndex];
     
         // Устанавливаем заголовок в зависимости от текущего вопроса
-        questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+        questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         const questionImage = document.getElementById('questionImage');
         questionImage.src = currentQuestion.questionImage; // Установка вопроса изображения
         questionImage.alt = currentQuestion.question; // Установка доступного текста для вопроса

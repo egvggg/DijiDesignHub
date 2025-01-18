@@ -1,6 +1,6 @@
 const tests = [
     {
-        question: "Продуктовый подход",
+        title: "Продуктовый подход",
         questionImage: "images/hardskills1.jpg",
         images: [
             {
@@ -20,7 +20,7 @@ const tests = [
         ]
     },
     {
-        question: "Продуктовый подход",
+        title: "Продуктовый подход",
         questionImage: "images/hardskills2.jpg",
         images: [
             {
@@ -40,7 +40,7 @@ const tests = [
         ]
     },
     {
-        question: "Продуктовый подход",
+        title: "Продуктовый подход",
         questionImage: "images/hardskills3.jpg",
         images: [
             {
@@ -60,7 +60,7 @@ const tests = [
         ]
     },
     {
-        question: "Визуальные коммуникации",
+        title: "Визуальные коммуникации",
         questionImage: "images/hardskills4.jpg",
         images: [
             {
@@ -80,7 +80,7 @@ const tests = [
         ]
     },
     {
-        question: "Визуальные коммуникации",
+        title: "Визуальные коммуникации",
         questionImage: "images/hardskills5.jpg",
         images: [
             {
@@ -100,7 +100,7 @@ const tests = [
         ]
     },
     {
-        question: "Коммуникативные навыки",
+        title: "Коммуникативные навыки",
         questionImage: "images/hardskills6.jpg",
         images: [
             {
@@ -120,7 +120,7 @@ const tests = [
         ]
     },
     {
-        question: "Гибкость и адаптивность",
+        title: "Гибкость и адаптивность",
         questionImage: "images/hardskills7.jpg",
         images: [
             {
@@ -140,7 +140,7 @@ const tests = [
         ]
     },
     {
-        question: "Гибкость и адаптивность",
+        title: "Гибкость и адаптивность",
         questionImage: "images/hardskills8.jpg",
         images: [
             {
@@ -160,6 +160,13 @@ const tests = [
         ]
     }]
 
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+        }
+    }
+
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
     const popup = document.getElementById('popup');
@@ -172,6 +179,8 @@ const tests = [
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
+
+    shuffle(tests);
     
     
     
@@ -181,7 +190,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
 
     // Устанавливаем заголовок в зависимости от текущего вопроса
-    questionTitle.textContent = currentQuestion.question || "Вопрос не найден";
+    questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
 
     // Устанавливаем изображение вопроса
     const questionImage = document.getElementById('questionImage');

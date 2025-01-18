@@ -1,6 +1,6 @@
 const tests = [
     {
-        question: "Вопрос 1",
+        title: "Какую ключевую роль играет UI kit в процессе разработки интерфейса?",
         images: [
             {
                 src: "images/uikitone1.jpg",
@@ -32,7 +32,7 @@ const tests = [
             }
         ]
     }, {
-        question: "Вопрос 2",
+        title: "Какое ключевое преимущество использования готовых компонентов из UI Kit?",
         images: [
             {
                 src: "images/uikittwo1.jpg",
@@ -65,7 +65,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 3",
+        title: "Как использование UI Kit влияет на сроки вывода продукта на рынок?",
         images: [
             {
                 src: "images/uikitthree1.jpg",
@@ -98,7 +98,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 4",
+        title: "Какова основная цель UI Kits, в отличие от гайдлайнов?",
         images: [
             {
                 src: "images/uikitfour1.jpg",
@@ -131,7 +131,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 5",
+        title: "Как используются UI Kits и гайдлайны на разных этапах разработки продукта?",
         images: [
             {
                 src: "images/uikitfive1.jpg",
@@ -164,7 +164,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 6",
+        title: "Что должно являться основой при разработке визуального стиля элементов UI Kit?",
         images: [
             {
                 src: "images/uikitsix1.jpg",
@@ -197,7 +197,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 7",
+        title: "Какие основные компоненты и элементы должны входить в UI Kit?",
         images: [
             {
                 src: "images/uikitseven1.jpg",
@@ -230,7 +230,7 @@ const tests = [
         ]
     },
     {
-        question: "Вопрос 8",
+        title: "Какие признаки могут указывать на неэффективность UI Kit?",
         images: [
             {
                 src: "images/uikiteight1.jpg",
@@ -263,25 +263,32 @@ const tests = [
         ]
     }]
 
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Меняем местами
+        }
+    }
+
     let currentQuestionIndex = 0;
     const imagesContainer = document.getElementById('imagesContainer');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const nextButton = document.getElementById('next-button');
     const cancelButton = document.getElementById('cancel-button');
-    const questionTitle = document.getElementById('question-title');
+    const questionTitle = document.getElementById('question-title21');
     
     // Всплывающее окно для прерывания занятия
     const confirmPopup = document.getElementById('confirm-popup');
     const cancelLogoutButton = document.getElementById('cancel-logout-button');
     const confirmLogoutButton = document.getElementById('confirm-logout-button');
     
-    const questionTitles = [
-        'Какую ключевую роль играет UI kit в процессе разработки интерфейса?', 'Какое ключевое преимущество использования готовых компонентов из UI Kit?',
-        'Как использование UI Kit влияет на сроки вывода продукта на рынок?', 'Какова основная цель UI Kits, в отличие от гайдлайнов?',
-        'Как используются UI Kits и гайдлайны на разных этапах разработки продукта?', 'Что должно являться основой при разработке визуального стиля элементов UI Kit?',
-        'Какие основные компоненты и элементы должны входить в UI Kit?', 'Какие признаки могут указывать на неэффективность UI Kit?'
-        ];
+    shuffle(tests);
+
+// Перемешиваем изображения для каждого вопроса
+tests.forEach(test => {
+    shuffle(test.images);
+});
     
     
         let correctAnswers = 0; // Инициализируем счетчик
@@ -290,7 +297,7 @@ const tests = [
             const currentQuestion = tests[currentQuestionIndex];
         
             // Устанавливаем заголовок в зависимости от текущего вопроса
-            questionTitle.textContent = questionTitles[currentQuestionIndex] || "Вопрос не найден";
+            questionTitle.textContent = currentQuestion.title || "Вопрос не найден";
         
             // Очистить контейнер изображений
             imagesContainer.innerHTML = '';
